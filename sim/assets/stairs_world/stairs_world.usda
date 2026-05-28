@@ -1,0 +1,92 @@
+#usda 1.0
+(
+    defaultPrim = "StairsWorld"
+    metersPerUnit = 1
+    upAxis = "Z"
+)
+
+def Xform "StairsWorld"
+{
+    def Scope "PhysicsMaterials"
+    {
+        def Material "high_grip" (
+            prepend apiSchemas = ["PhysicsMaterialAPI"]
+        )
+        {
+            float physics:dynamicFriction = 1
+            float physics:restitution = 0
+            float physics:staticFriction = 1.2
+        }
+    }
+
+    def Cube "top_platform" (
+        prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+    )
+    {
+        rel material:binding:physics = </StairsWorld/PhysicsMaterials/high_grip> (
+            bindMaterialAs = "weakerThanDescendants"
+        )
+        color3f[] primvars:displayColor = [(0.7, 0.7, 0.72)]
+        double size = 1
+        float3 xformOp:scale = (1.5, 1.5, 0.02)
+        double3 xformOp:translate = (-0.75, 0, 0.262)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:scale"]
+    }
+
+    def Cube "step_0" (
+        prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+    )
+    {
+        rel material:binding:physics = </StairsWorld/PhysicsMaterials/high_grip> (
+            bindMaterialAs = "weakerThanDescendants"
+        )
+        color3f[] primvars:displayColor = [(0.65, 0.55, 0.45)]
+        double size = 1
+        float3 xformOp:scale = (0.25, 1.5, 0.204)
+        double3 xformOp:translate = (0.125, 0, 0.10200000000000001)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:scale"]
+    }
+
+    def Cube "step_1" (
+        prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+    )
+    {
+        rel material:binding:physics = </StairsWorld/PhysicsMaterials/high_grip> (
+            bindMaterialAs = "weakerThanDescendants"
+        )
+        color3f[] primvars:displayColor = [(0.67, 0.55, 0.45)]
+        double size = 1
+        float3 xformOp:scale = (0.25, 1.5, 0.136)
+        double3 xformOp:translate = (0.375, 0, 0.068)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:scale"]
+    }
+
+    def Cube "step_2" (
+        prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+    )
+    {
+        rel material:binding:physics = </StairsWorld/PhysicsMaterials/high_grip> (
+            bindMaterialAs = "weakerThanDescendants"
+        )
+        color3f[] primvars:displayColor = [(0.69, 0.55, 0.45)]
+        double size = 1
+        float3 xformOp:scale = (0.25, 1.5, 0.068)
+        double3 xformOp:translate = (0.625, 0, 0.034)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:scale"]
+    }
+
+    def Cube "bottom" (
+        prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+    )
+    {
+        rel material:binding:physics = </StairsWorld/PhysicsMaterials/high_grip> (
+            bindMaterialAs = "weakerThanDescendants"
+        )
+        color3f[] primvars:displayColor = [(0.7, 0.7, 0.72)]
+        double size = 1
+        float3 xformOp:scale = (2, 1.5, 0.02)
+        double3 xformOp:translate = (2, 0, -0.01)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:scale"]
+    }
+}
+

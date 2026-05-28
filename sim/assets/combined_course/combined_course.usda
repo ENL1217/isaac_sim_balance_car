@@ -1,0 +1,470 @@
+#usda 1.0
+(
+    defaultPrim = "CombinedCourse"
+    metersPerUnit = 1
+    upAxis = "Z"
+)
+
+def Xform "CombinedCourse"
+{
+    def Scope "Lights"
+    {
+        def DistantLight "SunLight"
+        {
+            float inputs:angle = 2
+            float inputs:intensity = 1500
+            float3 xformOp:rotateXYZ = (-50, 0, 30)
+            uniform token[] xformOpOrder = ["xformOp:rotateXYZ"]
+        }
+
+        def DomeLight "SkyDome"
+        {
+            float inputs:intensity = 300
+        }
+    }
+
+    def Scope "PhysicsMaterials"
+    {
+        def Material "grip" (
+            prepend apiSchemas = ["PhysicsMaterialAPI"]
+        )
+        {
+            float physics:dynamicFriction = 1.4
+            float physics:restitution = 0
+            float physics:staticFriction = 1.6
+        }
+    }
+
+    def Cube "start_zone" (
+        prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+    )
+    {
+        rel material:binding:physics = </CombinedCourse/PhysicsMaterials/grip> (
+            bindMaterialAs = "weakerThanDescendants"
+        )
+        color3f[] primvars:displayColor = [(0.7, 0.72, 0.78)]
+        double size = 1
+        float3 xformOp:scale = (2, 1.5, 0.1)
+        double3 xformOp:translate = (-1, 0, 0.05)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:scale"]
+    }
+
+    def Cube "stair_0" (
+        prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+    )
+    {
+        rel material:binding:physics = </CombinedCourse/PhysicsMaterials/grip> (
+            bindMaterialAs = "weakerThanDescendants"
+        )
+        color3f[] primvars:displayColor = [(0.6, 0.55, 0.45)]
+        double size = 1
+        float3 xformOp:scale = (0.2, 1.5, 0.075)
+        double3 xformOp:translate = (0.1, 0, 0.037500000000000006)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:scale"]
+    }
+
+    def Cube "stair_1" (
+        prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+    )
+    {
+        rel material:binding:physics = </CombinedCourse/PhysicsMaterials/grip> (
+            bindMaterialAs = "weakerThanDescendants"
+        )
+        color3f[] primvars:displayColor = [(0.63, 0.55, 0.45)]
+        double size = 1
+        float3 xformOp:scale = (0.2, 1.5, 0.05)
+        double3 xformOp:translate = (0.30000000000000004, 0, 0.025)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:scale"]
+    }
+
+    def Cube "stair_2" (
+        prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+    )
+    {
+        rel material:binding:physics = </CombinedCourse/PhysicsMaterials/grip> (
+            bindMaterialAs = "weakerThanDescendants"
+        )
+        color3f[] primvars:displayColor = [(0.66, 0.55, 0.45)]
+        double size = 1
+        float3 xformOp:scale = (0.2, 1.5, 0.025)
+        double3 xformOp:translate = (0.5, 0, 0.012499999999999997)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:scale"]
+    }
+
+    def Cube "stair_3" (
+        prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+    )
+    {
+        rel material:binding:physics = </CombinedCourse/PhysicsMaterials/grip> (
+            bindMaterialAs = "weakerThanDescendants"
+        )
+        color3f[] primvars:displayColor = [(0.69, 0.55, 0.45)]
+        double size = 1
+        float3 xformOp:scale = (0.2, 1.5, 0.003)
+        double3 xformOp:translate = (0.7000000000000001, 0, -0.0015)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:scale"]
+    }
+
+    def Cube "flat_after_stairs" (
+        prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+    )
+    {
+        rel material:binding:physics = </CombinedCourse/PhysicsMaterials/grip> (
+            bindMaterialAs = "weakerThanDescendants"
+        )
+        color3f[] primvars:displayColor = [(0.72, 0.72, 0.75)]
+        double size = 1
+        float3 xformOp:scale = (1.5, 1.5, 0.003)
+        double3 xformOp:translate = (1.55, 0, -0.0015)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:scale"]
+    }
+
+    def Cube "ramp_up_bevel" (
+        prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+    )
+    {
+        rel material:binding:physics = </CombinedCourse/PhysicsMaterials/grip> (
+            bindMaterialAs = "weakerThanDescendants"
+        )
+        color3f[] primvars:displayColor = [(0.98, 0.55, 0.1)]
+        double size = 1
+        float3 xformOp:rotateXYZ = (0, -1.5, 0)
+        float3 xformOp:scale = (0.12004113, 1.5, 0.003)
+        double3 xformOp:translate = (2.360039265422462, 0, 0.00007166930668787985)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateXYZ", "xformOp:scale"]
+    }
+
+    def Cube "ramp_up_main" (
+        prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+    )
+    {
+        rel material:binding:physics = </CombinedCourse/PhysicsMaterials/grip> (
+            bindMaterialAs = "weakerThanDescendants"
+        )
+        color3f[] primvars:displayColor = [(0.98, 0.4, 0.05)]
+        double size = 1
+        float3 xformOp:rotateXYZ = (0, -3, 0)
+        float3 xformOp:scale = (0.5131785, 1.5, 0.003)
+        double3 xformOp:translate = (2.67631612532494, 0, 0.015073210992019354)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateXYZ", "xformOp:scale"]
+    }
+
+    def Cube "apex_platform" (
+        prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+    )
+    {
+        rel material:binding:physics = </CombinedCourse/PhysicsMaterials/grip> (
+            bindMaterialAs = "weakerThanDescendants"
+        )
+        color3f[] primvars:displayColor = [(0.72, 0.72, 0.72)]
+        double size = 1
+        float3 xformOp:scale = (0.5, 1.5, 0.003)
+        double3 xformOp:translate = (3.182475242781152, 0, 0.028499999999999998)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:scale"]
+    }
+
+    def Cube "ramp_down_main" (
+        prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+    )
+    {
+        rel material:binding:physics = </CombinedCourse/PhysicsMaterials/grip> (
+            bindMaterialAs = "weakerThanDescendants"
+        )
+        color3f[] primvars:displayColor = [(0.2, 0.6, 0.98)]
+        double size = 1
+        float3 xformOp:rotateXYZ = (0, 3, 0)
+        float3 xformOp:scale = (0.5131785, 1.5, 0.003)
+        double3 xformOp:translate = (3.6886343602373635, 0, 0.015073210992019354)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateXYZ", "xformOp:scale"]
+    }
+
+    def Cube "ramp_down_bevel" (
+        prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+    )
+    {
+        rel material:binding:physics = </CombinedCourse/PhysicsMaterials/grip> (
+            bindMaterialAs = "weakerThanDescendants"
+        )
+        color3f[] primvars:displayColor = [(0.35, 0.7, 0.98)]
+        double size = 1
+        float3 xformOp:rotateXYZ = (0, 1.5, 0)
+        float3 xformOp:scale = (0.12004113, 1.5, 0.003)
+        double3 xformOp:translate = (4.004911220139841, 0, 0.00007166930668787985)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateXYZ", "xformOp:scale"]
+    }
+
+    def Cube "flat_before_seesaw" (
+        prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+    )
+    {
+        rel material:binding:physics = </CombinedCourse/PhysicsMaterials/grip> (
+            bindMaterialAs = "weakerThanDescendants"
+        )
+        color3f[] primvars:displayColor = [(0.72, 0.72, 0.75)]
+        double size = 1
+        float3 xformOp:scale = (1, 1.5, 0.003)
+        double3 xformOp:translate = (4.564950485562304, 0, -0.0015)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:scale"]
+    }
+
+    def Cube "seesaw_ground" (
+        prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+    )
+    {
+        rel material:binding:physics = </CombinedCourse/PhysicsMaterials/grip> (
+            bindMaterialAs = "weakerThanDescendants"
+        )
+        color3f[] primvars:displayColor = [(0.72, 0.72, 0.75)]
+        double size = 1
+        float3 xformOp:scale = (7, 1.5, 0.003)
+        double3 xformOp:translate = (8.564950485562303, 0, -0.0115)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:scale"]
+    }
+
+    def Cylinder "seesaw_fulcrum"
+    {
+        uniform token axis = "Y"
+        double height = 1.4
+        color3f[] primvars:displayColor = [(0.55, 0.55, 0.6)]
+        double radius = 0.04
+        double3 xformOp:translate = (8.564950485562303, 0, 0.04)
+        uniform token[] xformOpOrder = ["xformOp:translate"]
+    }
+
+    def Xform "seesaw_plank" (
+        prepend apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI", "PhysxRigidBodyAPI"]
+    )
+    {
+        float physics:mass = 1
+        bool physics:rigidBodyEnabled = 1
+        float physxRigidBody:angularDamping = 0
+        bool physxRigidBody:enableGyroscopicForces = 0
+        float physxRigidBody:linearDamping = 0
+        float physxRigidBody:maxDepenetrationVelocity = 1
+        float3 xformOp:rotateXYZ = (0, 0, 0)
+        double3 xformOp:translate = (8.414950485562303, 0, 0.0815)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateXYZ"]
+
+        def Cube "visual" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+        )
+        {
+            rel material:binding:physics = </CombinedCourse/PhysicsMaterials/grip> (
+                bindMaterialAs = "weakerThanDescendants"
+            )
+            color3f[] primvars:displayColor = [(1, 0.92, 0.15)]
+            double size = 1
+            float3 xformOp:scale = (3, 1.2, 0.003)
+            uniform token[] xformOpOrder = ["xformOp:scale"]
+        }
+
+        def Cube "ir_line"
+        {
+            color3f[] primvars:displayColor = [(0.05, 0.05, 0.05)]
+            double size = 1
+            float3 xformOp:scale = (2.94, 0.04, 0.001)
+            double3 xformOp:translate = (0, 0, 0.002)
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:scale"]
+        }
+    }
+
+    def Cube "seesaw_entry_bevel" (
+        prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+    )
+    {
+        rel material:binding:physics = </CombinedCourse/PhysicsMaterials/grip> (
+            bindMaterialAs = "weakerThanDescendants"
+        )
+        color3f[] primvars:displayColor = [(1, 0.85, 0.1)]
+        double size = 1
+        float3 xformOp:rotateXYZ = (0, -2.7790668, 0)
+        float3 xformOp:scale = (0.06180223, 1.5, 0.003)
+        double3 xformOp:translate = (6.886098975161181, 0, -0.005)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateXYZ", "xformOp:scale"]
+    }
+
+    def Xform "seesaw_pivot_anchor" (
+        prepend apiSchemas = ["PhysicsRigidBodyAPI"]
+    )
+    {
+        bool physics:kinematicEnabled = 1
+        bool physics:rigidBodyEnabled = 1
+        double3 xformOp:translate = (8.564950485562303, 0, 0.08)
+        uniform token[] xformOpOrder = ["xformOp:translate"]
+    }
+
+    def PhysicsRevoluteJoint "seesaw_joint" (
+        prepend apiSchemas = ["PhysxJointAPI"]
+    )
+    {
+        uniform token physics:axis = "Y"
+        rel physics:body0 = </CombinedCourse/seesaw_pivot_anchor>
+        rel physics:body1 = </CombinedCourse/seesaw_plank>
+        point3f physics:localPos0 = (0, 0, 0)
+        point3f physics:localPos1 = (0.15, 0, -0.0015)
+        quatf physics:localRot0 = (1, 0, 0, 0)
+        quatf physics:localRot1 = (1, 0, 0, 0)
+        float physics:lowerLimit = -30
+        float physics:upperLimit = 30
+        float physxJoint:armature = 0
+        float physxJoint:jointFriction = 0
+        float physxJoint:maxJointVelocity = 1000
+    }
+
+    def Cube "finish_zone" (
+        prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+    )
+    {
+        rel material:binding:physics = </CombinedCourse/PhysicsMaterials/grip> (
+            bindMaterialAs = "weakerThanDescendants"
+        )
+        color3f[] primvars:displayColor = [(0.75, 0.85, 0.65)]
+        double size = 1
+        float3 xformOp:scale = (2, 1.5, 0.003)
+        double3 xformOp:translate = (13.064950485562303, 0, -0.0015)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:scale"]
+    }
+
+    def Scope "Line"
+    {
+        def Cube "seg_0_start_zone"
+        {
+            color3f[] primvars:displayColor = [(0.05, 0.05, 0.05)]
+            double size = 1
+            float3 xformOp:scale = (2, 0.04, 0.001)
+            double3 xformOp:translate = (-1, 0, 0.10060000000000001)
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:scale"]
+        }
+
+        def Cube "seg_1_stair_0"
+        {
+            color3f[] primvars:displayColor = [(0.05, 0.05, 0.05)]
+            double size = 1
+            float3 xformOp:scale = (0.2, 0.04, 0.001)
+            double3 xformOp:translate = (0.1, 0, 0.07560000000000001)
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:scale"]
+        }
+
+        def Cube "seg_1_stair_1"
+        {
+            color3f[] primvars:displayColor = [(0.05, 0.05, 0.05)]
+            double size = 1
+            float3 xformOp:scale = (0.2, 0.04, 0.001)
+            double3 xformOp:translate = (0.30000000000000004, 0, 0.050600000000000006)
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:scale"]
+        }
+
+        def Cube "seg_1_stair_2"
+        {
+            color3f[] primvars:displayColor = [(0.05, 0.05, 0.05)]
+            double size = 1
+            float3 xformOp:scale = (0.2, 0.04, 0.001)
+            double3 xformOp:translate = (0.5, 0, 0.025599999999999994)
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:scale"]
+        }
+
+        def Cube "seg_1_stair_3"
+        {
+            color3f[] primvars:displayColor = [(0.05, 0.05, 0.05)]
+            double size = 1
+            float3 xformOp:scale = (0.2, 0.04, 0.001)
+            double3 xformOp:translate = (0.7000000000000001, 0, 0.0006)
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:scale"]
+        }
+
+        def Cube "seg_2_flat_after_stairs"
+        {
+            color3f[] primvars:displayColor = [(0.05, 0.05, 0.05)]
+            double size = 1
+            float3 xformOp:scale = (1.5, 0.04, 0.001)
+            double3 xformOp:translate = (1.5499999999999998, 0, 0.0006)
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:scale"]
+        }
+
+        def Cube "seg_3_ramp_up_bevel"
+        {
+            color3f[] primvars:displayColor = [(0.05, 0.05, 0.05)]
+            double size = 1
+            float3 xformOp:rotateXYZ = (0, -1.5, 0)
+            float3 xformOp:scale = (0.12004113, 0.04, 0.001)
+            double3 xformOp:translate = (2.359984293831015, 0, 0.00217094968913655)
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateXYZ", "xformOp:scale"]
+        }
+
+        def Cube "seg_3_ramp_up_main"
+        {
+            color3f[] primvars:displayColor = [(0.05, 0.05, 0.05)]
+            double size = 1
+            float3 xformOp:rotateXYZ = (0, -3, 0)
+            float3 xformOp:scale = (0.5131785, 0.04, 0.001)
+            double3 xformOp:translate = (2.67620621981683, 0, 0.01717033301500396)
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateXYZ", "xformOp:scale"]
+        }
+
+        def Cube "seg_4_apex_platform"
+        {
+            color3f[] primvars:displayColor = [(0.05, 0.05, 0.05)]
+            double size = 1
+            float3 xformOp:scale = (0.5, 0.04, 0.001)
+            double3 xformOp:translate = (3.182475242781152, 0, 0.0306)
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:scale"]
+        }
+
+        def Cube "seg_5_ramp_down_main"
+        {
+            color3f[] primvars:displayColor = [(0.05, 0.05, 0.05)]
+            double size = 1
+            float3 xformOp:rotateXYZ = (0, 3, 0)
+            float3 xformOp:scale = (0.5131785, 0.04, 0.001)
+            double3 xformOp:translate = (3.6887442657454734, 0, 0.01717033301500396)
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateXYZ", "xformOp:scale"]
+        }
+
+        def Cube "seg_5_ramp_down_bevel"
+        {
+            color3f[] primvars:displayColor = [(0.05, 0.05, 0.05)]
+            double size = 1
+            float3 xformOp:rotateXYZ = (0, 1.5, 0)
+            float3 xformOp:scale = (0.12004113, 0.04, 0.001)
+            double3 xformOp:translate = (4.004966191731288, 0, 0.00217094968913655)
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateXYZ", "xformOp:scale"]
+        }
+
+        def Cube "seg_6_flat_before_seesaw"
+        {
+            color3f[] primvars:displayColor = [(0.05, 0.05, 0.05)]
+            double size = 1
+            float3 xformOp:scale = (1, 0.04, 0.001)
+            double3 xformOp:translate = (4.564950485562304, 0, 0.0006)
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:scale"]
+        }
+
+        def Cube "seg_7_seesaw_pre"
+        {
+            color3f[] primvars:displayColor = [(0.05, 0.05, 0.05)]
+            double size = 1
+            float3 xformOp:scale = (3.35, 0.04, 0.001)
+            double3 xformOp:translate = (6.739950485562304, 0, 0.0006)
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:scale"]
+        }
+
+        def Cube "seg_7_seesaw_post"
+        {
+            color3f[] primvars:displayColor = [(0.05, 0.05, 0.05)]
+            double size = 1
+            float3 xformOp:scale = (3.35, 0.04, 0.001)
+            double3 xformOp:translate = (10.389950485562302, 0, 0.0006)
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:scale"]
+        }
+
+        def Cube "seg_8_finish_zone"
+        {
+            color3f[] primvars:displayColor = [(0.05, 0.05, 0.05)]
+            double size = 1
+            float3 xformOp:scale = (2, 0.04, 0.001)
+            double3 xformOp:translate = (13.064950485562303, 0, 0.0006)
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:scale"]
+        }
+    }
+}
+

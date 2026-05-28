@@ -1,0 +1,85 @@
+#usda 1.0
+(
+    defaultPrim = "SeesawWorld"
+    metersPerUnit = 1
+    upAxis = "Z"
+)
+
+def Xform "SeesawWorld"
+{
+    def Scope "PhysicsMaterials"
+    {
+        def Material "high_grip" (
+            prepend apiSchemas = ["PhysicsMaterialAPI"]
+        )
+        {
+            float physics:dynamicFriction = 1
+            float physics:restitution = 0
+            float physics:staticFriction = 1.2
+        }
+    }
+
+    def Cube "ground" (
+        prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+    )
+    {
+        rel material:binding:physics = </SeesawWorld/PhysicsMaterials/high_grip> (
+            bindMaterialAs = "weakerThanDescendants"
+        )
+        color3f[] primvars:displayColor = [(0.7, 0.7, 0.72)]
+        double size = 1
+        float3 xformOp:scale = (5, 3, 0.02)
+        double3 xformOp:translate = (0, 0, -0.01)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:scale"]
+    }
+
+    def Cube "fulcrum" (
+        prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+    )
+    {
+        rel material:binding:physics = </SeesawWorld/PhysicsMaterials/high_grip> (
+            bindMaterialAs = "weakerThanDescendants"
+        )
+        color3f[] primvars:displayColor = [(0.55, 0.55, 0.6)]
+        double size = 1
+        float3 xformOp:scale = (0.3, 0.5, 0.1)
+        double3 xformOp:translate = (0, 0, 0.05)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:scale"]
+    }
+
+    def Xform "plank" (
+        prepend apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI"]
+    )
+    {
+        float physics:mass = 2
+        bool physics:rigidBodyEnabled = 1
+        double3 xformOp:translate = (0, 0, 0.12000000000000001)
+        uniform token[] xformOpOrder = ["xformOp:translate"]
+
+        def Cube "visual" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+        )
+        {
+            rel material:binding:physics = </SeesawWorld/PhysicsMaterials/high_grip> (
+                bindMaterialAs = "weakerThanDescendants"
+            )
+            color3f[] primvars:displayColor = [(0.78, 0.62, 0.45)]
+            double size = 1
+            float3 xformOp:scale = (2, 0.4, 0.04)
+            uniform token[] xformOpOrder = ["xformOp:scale"]
+        }
+    }
+
+    def PhysicsRevoluteJoint "plank_pivot"
+    {
+        uniform token physics:axis = "Y"
+        rel physics:body1 = </SeesawWorld/plank>
+        point3f physics:localPos0 = (0, 0, 0.1)
+        point3f physics:localPos1 = (0, 0, -0.02)
+        quatf physics:localRot0 = (1, 0, 0, 0)
+        quatf physics:localRot1 = (1, 0, 0, 0)
+        float physics:lowerLimit = -25
+        float physics:upperLimit = 25
+    }
+}
+

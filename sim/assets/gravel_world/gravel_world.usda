@@ -1,0 +1,3939 @@
+#usda 1.0
+(
+    defaultPrim = "GravelWorld"
+    metersPerUnit = 1
+    upAxis = "Z"
+)
+
+def Xform "GravelWorld"
+{
+    def Scope "PhysicsMaterials"
+    {
+        def Material "gravel" (
+            prepend apiSchemas = ["PhysicsMaterialAPI"]
+        )
+        {
+            float physics:dynamicFriction = 0.8
+            float physics:restitution = 0
+            float physics:staticFriction = 1
+        }
+    }
+
+    def Cube "ground" (
+        prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+    )
+    {
+        rel material:binding:physics = </GravelWorld/PhysicsMaterials/gravel> (
+            bindMaterialAs = "weakerThanDescendants"
+        )
+        color3f[] primvars:displayColor = [(0.55, 0.5, 0.45)]
+        double size = 1
+        float3 xformOp:scale = (6, 3, 0.02)
+        double3 xformOp:translate = (2, 0, -0.01)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:scale"]
+    }
+
+    def Scope "Stones"
+    {
+        def Sphere "stone_0000" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+        )
+        {
+            rel material:binding:physics = </GravelWorld/PhysicsMaterials/gravel> (
+                bindMaterialAs = "weakerThanDescendants"
+            )
+            color3f[] primvars:displayColor = [(0.44464216, 0.42241004, 0.40017793)]
+            double radius = 0.013312548379952487
+            double3 xformOp:translate = (-0.8749462238866653, -0.2699648179570569, 0.007987529027971492)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def Sphere "stone_0001" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+        )
+        {
+            rel material:binding:physics = </GravelWorld/PhysicsMaterials/gravel> (
+                bindMaterialAs = "weakerThanDescendants"
+            )
+            color3f[] primvars:displayColor = [(0.41738775, 0.39651838, 0.37564898)]
+            double radius = 0.014574125784132159
+            double3 xformOp:translate = (2.3834974371145563, 0.4706154812458144, 0.008744475470479294)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def Sphere "stone_0002" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+        )
+        {
+            rel material:binding:physics = </GravelWorld/PhysicsMaterials/gravel> (
+                bindMaterialAs = "weakerThanDescendants"
+            )
+            color3f[] primvars:displayColor = [(0.50107104, 0.4760175, 0.45096394)]
+            double radius = 0.010484983655908515
+            double3 xformOp:translate = (-0.8510139028096483, -0.33763443023567596, 0.0062909901935451085)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def Sphere "stone_0003" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+        )
+        {
+            rel material:binding:physics = </GravelWorld/PhysicsMaterials/gravel> (
+                bindMaterialAs = "weakerThanDescendants"
+            )
+            color3f[] primvars:displayColor = [(0.5089883, 0.4835389, 0.45808947)]
+            double radius = 0.005344967605890227
+            double3 xformOp:translate = (-0.005811746566757536, 0.17986132533542787, 0.003206980563534136)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def Sphere "stone_0004" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+        )
+        {
+            rel material:binding:physics = </GravelWorld/PhysicsMaterials/gravel> (
+                bindMaterialAs = "weakerThanDescendants"
+            )
+            color3f[] primvars:displayColor = [(0.40129974, 0.38123477, 0.3611698)]
+            double radius = 0.007865728086529057
+            double3 xformOp:translate = (1.9463284193795438, 0.371316548013392, 0.004719436851917434)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def Sphere "stone_0005" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+        )
+        {
+            rel material:binding:physics = </GravelWorld/PhysicsMaterials/gravel> (
+                bindMaterialAs = "weakerThanDescendants"
+            )
+            color3f[] primvars:displayColor = [(0.4310959, 0.4095411, 0.3879863)]
+            double radius = 0.0154756502738265
+            double3 xformOp:translate = (2.4906969749411343, -0.19169938017840976, 0.009285390164295899)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def Sphere "stone_0006" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+        )
+        {
+            rel material:binding:physics = </GravelWorld/PhysicsMaterials/gravel> (
+                bindMaterialAs = "weakerThanDescendants"
+            )
+            color3f[] primvars:displayColor = [(0.41934326, 0.3983761, 0.37740895)]
+            double radius = 0.017443769938688153
+            double3 xformOp:translate = (0.6829727255631339, -0.4887049879438225, 0.01046626196321289)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def Sphere "stone_0007" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+        )
+        {
+            rel material:binding:physics = </GravelWorld/PhysicsMaterials/gravel> (
+                bindMaterialAs = "weakerThanDescendants"
+            )
+            color3f[] primvars:displayColor = [(0.54594636, 0.51864904, 0.49135172)]
+            double radius = 0.016017426762516974
+            double3 xformOp:translate = (2.0186301568344556, 0.36855392792925623, 0.009610456057510184)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def Sphere "stone_0008" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+        )
+        {
+            rel material:binding:physics = </GravelWorld/PhysicsMaterials/gravel> (
+                bindMaterialAs = "weakerThanDescendants"
+            )
+            color3f[] primvars:displayColor = [(0.5104081, 0.48488772, 0.4593673)]
+            double radius = 0.011970965188911109
+            double3 xformOp:translate = (3.865578819896853, -0.14575874734997585, 0.007182579113346665)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def Sphere "stone_0009" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+        )
+        {
+            rel material:binding:physics = </GravelWorld/PhysicsMaterials/gravel> (
+                bindMaterialAs = "weakerThanDescendants"
+            )
+            color3f[] primvars:displayColor = [(0.51547045, 0.48969692, 0.4639234)]
+            double radius = 0.015782260635288932
+            double3 xformOp:translate = (2.0925987618212303, 0.43404828037293275, 0.009469356381173358)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def Sphere "stone_0010" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+        )
+        {
+            rel material:binding:physics = </GravelWorld/PhysicsMaterials/gravel> (
+                bindMaterialAs = "weakerThanDescendants"
+            )
+            color3f[] primvars:displayColor = [(0.4578776, 0.4349837, 0.41208982)]
+            double radius = 0.014159433870794002
+            double3 xformOp:translate = (-0.7708780817216889, -0.32652206921814375, 0.0084956603224764)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def Sphere "stone_0011" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+        )
+        {
+            rel material:binding:physics = </GravelWorld/PhysicsMaterials/gravel> (
+                bindMaterialAs = "weakerThanDescendants"
+            )
+            color3f[] primvars:displayColor = [(0.45559472, 0.432815, 0.41003525)]
+            double radius = 0.006037295700007157
+            double3 xformOp:translate = (0.1639544318051509, -0.47879828470832503, 0.003622377420004294)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def Sphere "stone_0012" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+        )
+        {
+            rel material:binding:physics = </GravelWorld/PhysicsMaterials/gravel> (
+                bindMaterialAs = "weakerThanDescendants"
+            )
+            color3f[] primvars:displayColor = [(0.44190142, 0.41980633, 0.39771128)]
+            double radius = 0.0132638977754372
+            double3 xformOp:translate = (0.8241608948504213, -0.1557828394597408, 0.00795833866526232)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def Sphere "stone_0013" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+        )
+        {
+            rel material:binding:physics = </GravelWorld/PhysicsMaterials/gravel> (
+                bindMaterialAs = "weakerThanDescendants"
+            )
+            color3f[] primvars:displayColor = [(0.5218262, 0.4957349, 0.4696436)]
+            double radius = 0.008470711686638474
+            double3 xformOp:translate = (3.68327293856247, 0.1776424622959123, 0.005082427011983084)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def Sphere "stone_0014" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+        )
+        {
+            rel material:binding:physics = </GravelWorld/PhysicsMaterials/gravel> (
+                bindMaterialAs = "weakerThanDescendants"
+            )
+            color3f[] primvars:displayColor = [(0.47589108, 0.45209652, 0.428302)]
+            double radius = 0.00722480242657526
+            double3 xformOp:translate = (2.645633989751746, -0.40391700748568593, 0.004334881455945156)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def Sphere "stone_0015" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+        )
+        {
+            rel material:binding:physics = </GravelWorld/PhysicsMaterials/gravel> (
+                bindMaterialAs = "weakerThanDescendants"
+            )
+            color3f[] primvars:displayColor = [(0.5369229, 0.5100767, 0.48323056)]
+            double radius = 0.017863803558275736
+            double3 xformOp:translate = (2.1999987992704644, 0.0683396925295755, 0.01071828213496544)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def Sphere "stone_0016" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+        )
+        {
+            rel material:binding:physics = </GravelWorld/PhysicsMaterials/gravel> (
+                bindMaterialAs = "weakerThanDescendants"
+            )
+            color3f[] primvars:displayColor = [(0.40642005, 0.38609904, 0.36577806)]
+            double radius = 0.015957074962467524
+            double3 xformOp:translate = (2.879999557731224, -0.3251423136430747, 0.009574244977480514)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def Sphere "stone_0017" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+        )
+        {
+            rel material:binding:physics = </GravelWorld/PhysicsMaterials/gravel> (
+                bindMaterialAs = "weakerThanDescendants"
+            )
+            color3f[] primvars:displayColor = [(0.5885819, 0.55915284, 0.52972376)]
+            double radius = 0.009100889624768065
+            double3 xformOp:translate = (0.33870437987851365, -0.3468205876964082, 0.005460533774860839)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def Sphere "stone_0018" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+        )
+        {
+            rel material:binding:physics = </GravelWorld/PhysicsMaterials/gravel> (
+                bindMaterialAs = "weakerThanDescendants"
+            )
+            color3f[] primvars:displayColor = [(0.4791264, 0.45517007, 0.43121374)]
+            double radius = 0.016392779144144692
+            double3 xformOp:translate = (0.5733894039923895, 0.1865263983538561, 0.009835667486486815)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def Sphere "stone_0019" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+        )
+        {
+            rel material:binding:physics = </GravelWorld/PhysicsMaterials/gravel> (
+                bindMaterialAs = "weakerThanDescendants"
+            )
+            color3f[] primvars:displayColor = [(0.4493255, 0.42685923, 0.40439296)]
+            double radius = 0.016889118666627064
+            double3 xformOp:translate = (1.2942592629369942, -0.28214380020233704, 0.010133471199976238)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def Sphere "stone_0020" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+        )
+        {
+            rel material:binding:physics = </GravelWorld/PhysicsMaterials/gravel> (
+                bindMaterialAs = "weakerThanDescendants"
+            )
+            color3f[] primvars:displayColor = [(0.5795646, 0.55058634, 0.5216081)]
+            double radius = 0.012297785744120958
+            double3 xformOp:translate = (0.31370804261467633, 0.10150318826824867, 0.007378671446472574)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def Sphere "stone_0021" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+        )
+        {
+            rel material:binding:physics = </GravelWorld/PhysicsMaterials/gravel> (
+                bindMaterialAs = "weakerThanDescendants"
+            )
+            color3f[] primvars:displayColor = [(0.50190526, 0.47681, 0.45171472)]
+            double radius = 0.010192206566825164
+            double3 xformOp:translate = (0.09660379578641676, 0.5970451277941323, 0.006115323940095098)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def Sphere "stone_0022" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+        )
+        {
+            rel material:binding:physics = </GravelWorld/PhysicsMaterials/gravel> (
+                bindMaterialAs = "weakerThanDescendants"
+            )
+            color3f[] primvars:displayColor = [(0.5254892, 0.49921474, 0.4729403)]
+            double radius = 0.006181822358259321
+            double3 xformOp:translate = (-0.7644181228763272, -0.468421043579209, 0.003709093414955592)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def Sphere "stone_0023" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+        )
+        {
+            rel material:binding:physics = </GravelWorld/PhysicsMaterials/gravel> (
+                bindMaterialAs = "weakerThanDescendants"
+            )
+            color3f[] primvars:displayColor = [(0.47632384, 0.45250767, 0.42869148)]
+            double radius = 0.015297031736718533
+            double3 xformOp:translate = (1.1107998339984202, -0.5237667526176514, 0.00917821904203112)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def Sphere "stone_0024" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+        )
+        {
+            rel material:binding:physics = </GravelWorld/PhysicsMaterials/gravel> (
+                bindMaterialAs = "weakerThanDescendants"
+            )
+            color3f[] primvars:displayColor = [(0.57215595, 0.54354817, 0.5149403)]
+            double radius = 0.017949577943121256
+            double3 xformOp:translate = (1.6455717254956852, 0.5652940531363418, 0.010769746765872753)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def Sphere "stone_0025" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+        )
+        {
+            rel material:binding:physics = </GravelWorld/PhysicsMaterials/gravel> (
+                bindMaterialAs = "weakerThanDescendants"
+            )
+            color3f[] primvars:displayColor = [(0.5073941, 0.48202437, 0.45665467)]
+            double radius = 0.0051492532852566554
+            double3 xformOp:translate = (2.603609096800973, 0.21805244283188974, 0.003089551971153993)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def Sphere "stone_0026" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+        )
+        {
+            rel material:binding:physics = </GravelWorld/PhysicsMaterials/gravel> (
+                bindMaterialAs = "weakerThanDescendants"
+            )
+            color3f[] primvars:displayColor = [(0.48695305, 0.4626054, 0.43825775)]
+            double radius = 0.008468727469383056
+            double3 xformOp:translate = (2.20480899289904, -0.4661373916849483, 0.0050812364816298335)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def Sphere "stone_0027" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+        )
+        {
+            rel material:binding:physics = </GravelWorld/PhysicsMaterials/gravel> (
+                bindMaterialAs = "weakerThanDescendants"
+            )
+            color3f[] primvars:displayColor = [(0.45267782, 0.4300439, 0.40741003)]
+            double radius = 0.010898408182279683
+            double3 xformOp:translate = (3.769079637605401, 0.45102352845383276, 0.006539044909367809)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def Sphere "stone_0028" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+        )
+        {
+            rel material:binding:physics = </GravelWorld/PhysicsMaterials/gravel> (
+                bindMaterialAs = "weakerThanDescendants"
+            )
+            color3f[] primvars:displayColor = [(0.5741037, 0.54539853, 0.51669335)]
+            double radius = 0.011507619469653877
+            double3 xformOp:translate = (-0.10674059734934316, 0.49515340721378454, 0.006904571681792326)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def Sphere "stone_0029" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+        )
+        {
+            rel material:binding:physics = </GravelWorld/PhysicsMaterials/gravel> (
+                bindMaterialAs = "weakerThanDescendants"
+            )
+            color3f[] primvars:displayColor = [(0.43056786, 0.40903947, 0.38751107)]
+            double radius = 0.008879782288832226
+            double3 xformOp:translate = (2.194747474330026, 0.1307642537258068, 0.005327869373299336)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def Sphere "stone_0030" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+        )
+        {
+            rel material:binding:physics = </GravelWorld/PhysicsMaterials/gravel> (
+                bindMaterialAs = "weakerThanDescendants"
+            )
+            color3f[] primvars:displayColor = [(0.50607073, 0.4807672, 0.45546365)]
+            double radius = 0.014912640400976965
+            double3 xformOp:translate = (1.6968951505981287, 0.33435177435666985, 0.00894758424058618)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def Sphere "stone_0031" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+        )
+        {
+            rel material:binding:physics = </GravelWorld/PhysicsMaterials/gravel> (
+                bindMaterialAs = "weakerThanDescendants"
+            )
+            color3f[] primvars:displayColor = [(0.5858197, 0.55652875, 0.5272378)]
+            double radius = 0.005007434649663266
+            double3 xformOp:translate = (0.6207802850233655, -0.5766279091370012, 0.0030044607897979593)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def Sphere "stone_0032" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+        )
+        {
+            rel material:binding:physics = </GravelWorld/PhysicsMaterials/gravel> (
+                bindMaterialAs = "weakerThanDescendants"
+            )
+            color3f[] primvars:displayColor = [(0.41158503, 0.39100578, 0.37042654)]
+            double radius = 0.016423384411701394
+            double3 xformOp:translate = (3.1583276468058976, -0.23098304951680626, 0.009854030647020836)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def Sphere "stone_0033" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+        )
+        {
+            rel material:binding:physics = </GravelWorld/PhysicsMaterials/gravel> (
+                bindMaterialAs = "weakerThanDescendants"
+            )
+            color3f[] primvars:displayColor = [(0.4971981, 0.4723382, 0.4474783)]
+            double radius = 0.016414124789652526
+            double3 xformOp:translate = (3.7347472264899704, -0.49721585751854547, 0.009848474873791516)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def Sphere "stone_0034" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+        )
+        {
+            rel material:binding:physics = </GravelWorld/PhysicsMaterials/gravel> (
+                bindMaterialAs = "weakerThanDescendants"
+            )
+            color3f[] primvars:displayColor = [(0.42567828, 0.4043944, 0.38311046)]
+            double radius = 0.005899762740088987
+            double3 xformOp:translate = (2.8030108262861577, 0.31900131516838526, 0.0035398576440533918)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def Sphere "stone_0035" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+        )
+        {
+            rel material:binding:physics = </GravelWorld/PhysicsMaterials/gravel> (
+                bindMaterialAs = "weakerThanDescendants"
+            )
+            color3f[] primvars:displayColor = [(0.5744866, 0.5457623, 0.5170379)]
+            double radius = 0.011178670915283507
+            double3 xformOp:translate = (1.7490179674747193, -0.28193204527192905, 0.006707202549170104)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def Sphere "stone_0036" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+        )
+        {
+            rel material:binding:physics = </GravelWorld/PhysicsMaterials/gravel> (
+                bindMaterialAs = "weakerThanDescendants"
+            )
+            color3f[] primvars:displayColor = [(0.54598624, 0.5186869, 0.4913876)]
+            double radius = 0.010500793222611528
+            double3 xformOp:translate = (0.05899102721041016, 0.04715530653535005, 0.006300475933566916)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def Sphere "stone_0037" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+        )
+        {
+            rel material:binding:physics = </GravelWorld/PhysicsMaterials/gravel> (
+                bindMaterialAs = "weakerThanDescendants"
+            )
+            color3f[] primvars:displayColor = [(0.5299756, 0.50347686, 0.47697806)]
+            double radius = 0.007614963824066047
+            double3 xformOp:translate = (0.5585814565044749, 0.5941792279930737, 0.004568978294439628)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def Sphere "stone_0038" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+        )
+        {
+            rel material:binding:physics = </GravelWorld/PhysicsMaterials/gravel> (
+                bindMaterialAs = "weakerThanDescendants"
+            )
+            color3f[] primvars:displayColor = [(0.44493946, 0.4226925, 0.40044552)]
+            double radius = 0.010695301090888551
+            double3 xformOp:translate = (1.587879205177953, -0.45479496495808114, 0.006417180654533131)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def Sphere "stone_0039" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+        )
+        {
+            rel material:binding:physics = </GravelWorld/PhysicsMaterials/gravel> (
+                bindMaterialAs = "weakerThanDescendants"
+            )
+            color3f[] primvars:displayColor = [(0.4440435, 0.4218413, 0.39963913)]
+            double radius = 0.009395112307916918
+            double3 xformOp:translate = (1.9415435922861666, -0.3238623208841076, 0.005637067384750151)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def Sphere "stone_0040" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+        )
+        {
+            rel material:binding:physics = </GravelWorld/PhysicsMaterials/gravel> (
+                bindMaterialAs = "weakerThanDescendants"
+            )
+            color3f[] primvars:displayColor = [(0.581084, 0.5520298, 0.5229756)]
+            double radius = 0.005922910118117423
+            double3 xformOp:translate = (2.1555147863504946, -0.32526985942661474, 0.0035537460708704536)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def Sphere "stone_0041" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+        )
+        {
+            rel material:binding:physics = </GravelWorld/PhysicsMaterials/gravel> (
+                bindMaterialAs = "weakerThanDescendants"
+            )
+            color3f[] primvars:displayColor = [(0.53379554, 0.50710577, 0.480416)]
+            double radius = 0.0161752602032987
+            double3 xformOp:translate = (-0.6457132505567328, -0.31439443875720574, 0.00970515612197922)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def Sphere "stone_0042" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+        )
+        {
+            rel material:binding:physics = </GravelWorld/PhysicsMaterials/gravel> (
+                bindMaterialAs = "weakerThanDescendants"
+            )
+            color3f[] primvars:displayColor = [(0.5142086, 0.48849818, 0.46278775)]
+            double radius = 0.007785078495815702
+            double3 xformOp:translate = (-0.33844075637487503, 0.5226170886968052, 0.004671047097489421)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def Sphere "stone_0043" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+        )
+        {
+            rel material:binding:physics = </GravelWorld/PhysicsMaterials/gravel> (
+                bindMaterialAs = "weakerThanDescendants"
+            )
+            color3f[] primvars:displayColor = [(0.43808198, 0.41617787, 0.3942738)]
+            double radius = 0.011144723342053322
+            double3 xformOp:translate = (2.923097121453767, 0.368996397319972, 0.006686834005231993)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def Sphere "stone_0044" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+        )
+        {
+            rel material:binding:physics = </GravelWorld/PhysicsMaterials/gravel> (
+                bindMaterialAs = "weakerThanDescendants"
+            )
+            color3f[] primvars:displayColor = [(0.49340492, 0.46873468, 0.44406444)]
+            double radius = 0.0062601005849747034
+            double3 xformOp:translate = (1.1552559120318877, -0.09170565237609507, 0.003756060350984822)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def Sphere "stone_0045" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+        )
+        {
+            rel material:binding:physics = </GravelWorld/PhysicsMaterials/gravel> (
+                bindMaterialAs = "weakerThanDescendants"
+            )
+            color3f[] primvars:displayColor = [(0.41968358, 0.3986994, 0.37771523)]
+            double radius = 0.014477986042978057
+            double3 xformOp:translate = (2.3668227364665078, 0.5809982536391592, 0.008686791625786833)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def Sphere "stone_0046" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+        )
+        {
+            rel material:binding:physics = </GravelWorld/PhysicsMaterials/gravel> (
+                bindMaterialAs = "weakerThanDescendants"
+            )
+            color3f[] primvars:displayColor = [(0.44973126, 0.4272447, 0.40475813)]
+            double radius = 0.010234076667329492
+            double3 xformOp:translate = (0.6965130269748157, 0.4340070436233493, 0.006140446000397695)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def Sphere "stone_0047" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+        )
+        {
+            rel material:binding:physics = </GravelWorld/PhysicsMaterials/gravel> (
+                bindMaterialAs = "weakerThanDescendants"
+            )
+            color3f[] primvars:displayColor = [(0.45570904, 0.4329236, 0.41013813)]
+            double radius = 0.0074727158097305495
+            double3 xformOp:translate = (1.2430677391656593, -0.09374203219871502, 0.00448362948583833)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def Sphere "stone_0048" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+        )
+        {
+            rel material:binding:physics = </GravelWorld/PhysicsMaterials/gravel> (
+                bindMaterialAs = "weakerThanDescendants"
+            )
+            color3f[] primvars:displayColor = [(0.5722698, 0.54365635, 0.51504284)]
+            double radius = 0.008247483822467306
+            double3 xformOp:translate = (3.616327996380064, -0.0682431059358517, 0.004948490293480383)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def Sphere "stone_0049" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+        )
+        {
+            rel material:binding:physics = </GravelWorld/PhysicsMaterials/gravel> (
+                bindMaterialAs = "weakerThanDescendants"
+            )
+            color3f[] primvars:displayColor = [(0.5672055, 0.53884524, 0.510485)]
+            double radius = 0.012154229061848024
+            double3 xformOp:translate = (-0.7470583523755938, 0.599138962095272, 0.007292537437108814)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def Sphere "stone_0050" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+        )
+        {
+            rel material:binding:physics = </GravelWorld/PhysicsMaterials/gravel> (
+                bindMaterialAs = "weakerThanDescendants"
+            )
+            color3f[] primvars:displayColor = [(0.43326223, 0.4115991, 0.389936)]
+            double radius = 0.017596951344701763
+            double3 xformOp:translate = (3.6318349150406384, 0.41843488129716644, 0.010558170806821058)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def Sphere "stone_0051" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+        )
+        {
+            rel material:binding:physics = </GravelWorld/PhysicsMaterials/gravel> (
+                bindMaterialAs = "weakerThanDescendants"
+            )
+            color3f[] primvars:displayColor = [(0.41172707, 0.39114073, 0.37055436)]
+            double radius = 0.011313334630859338
+            double3 xformOp:translate = (0.06873649599590825, -0.11875164894065687, 0.0067880007785156024)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def Sphere "stone_0052" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+        )
+        {
+            rel material:binding:physics = </GravelWorld/PhysicsMaterials/gravel> (
+                bindMaterialAs = "weakerThanDescendants"
+            )
+            color3f[] primvars:displayColor = [(0.55681413, 0.5289734, 0.5011327)]
+            double radius = 0.00992665054669991
+            double3 xformOp:translate = (3.9265442188986297, -0.28175633019341767, 0.005955990328019946)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def Sphere "stone_0053" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+        )
+        {
+            rel material:binding:physics = </GravelWorld/PhysicsMaterials/gravel> (
+                bindMaterialAs = "weakerThanDescendants"
+            )
+            color3f[] primvars:displayColor = [(0.59908456, 0.5691303, 0.5391761)]
+            double radius = 0.010915108775408862
+            double3 xformOp:translate = (1.1150374299508146, 0.5487811690316079, 0.006549065265245317)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def Sphere "stone_0054" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+        )
+        {
+            rel material:binding:physics = </GravelWorld/PhysicsMaterials/gravel> (
+                bindMaterialAs = "weakerThanDescendants"
+            )
+            color3f[] primvars:displayColor = [(0.45934156, 0.4363745, 0.41340742)]
+            double radius = 0.012224988204273035
+            double3 xformOp:translate = (2.59204137648163, -0.41424380967112306, 0.007334992922563821)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def Sphere "stone_0055" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+        )
+        {
+            rel material:binding:physics = </GravelWorld/PhysicsMaterials/gravel> (
+                bindMaterialAs = "weakerThanDescendants"
+            )
+            color3f[] primvars:displayColor = [(0.5495951, 0.52211535, 0.4946356)]
+            double radius = 0.017593221744599062
+            double3 xformOp:translate = (1.8959014540812813, 0.05063424164912911, 0.010555933046759437)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def Sphere "stone_0056" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+        )
+        {
+            rel material:binding:physics = </GravelWorld/PhysicsMaterials/gravel> (
+                bindMaterialAs = "weakerThanDescendants"
+            )
+            color3f[] primvars:displayColor = [(0.570544, 0.5420168, 0.5134896)]
+            double radius = 0.00574314854779728
+            double3 xformOp:translate = (1.9208879722948562, 0.0034204595034162955, 0.0034458891286783676)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def Sphere "stone_0057" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+        )
+        {
+            rel material:binding:physics = </GravelWorld/PhysicsMaterials/gravel> (
+                bindMaterialAs = "weakerThanDescendants"
+            )
+            color3f[] primvars:displayColor = [(0.437165, 0.41530675, 0.3934485)]
+            double radius = 0.007046625463213283
+            double3 xformOp:translate = (3.803894516372252, -0.5038662417112957, 0.00422797527792797)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def Sphere "stone_0058" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+        )
+        {
+            rel material:binding:physics = </GravelWorld/PhysicsMaterials/gravel> (
+                bindMaterialAs = "weakerThanDescendants"
+            )
+            color3f[] primvars:displayColor = [(0.42397732, 0.40277845, 0.38157958)]
+            double radius = 0.012735456383850359
+            double3 xformOp:translate = (2.376062768020451, -0.31775532599888257, 0.007641273830310215)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def Sphere "stone_0059" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+        )
+        {
+            rel material:binding:physics = </GravelWorld/PhysicsMaterials/gravel> (
+                bindMaterialAs = "weakerThanDescendants"
+            )
+            color3f[] primvars:displayColor = [(0.5238763, 0.49768248, 0.47148868)]
+            double radius = 0.016573735083682685
+            double3 xformOp:translate = (0.2310767389431243, 0.11342298424012942, 0.00994424105020961)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def Sphere "stone_0060" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+        )
+        {
+            rel material:binding:physics = </GravelWorld/PhysicsMaterials/gravel> (
+                bindMaterialAs = "weakerThanDescendants"
+            )
+            color3f[] primvars:displayColor = [(0.58694124, 0.5575942, 0.5282471)]
+            double radius = 0.010449923899366342
+            double3 xformOp:translate = (1.9183614464561236, 0.027339258638350628, 0.006269954339619805)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def Sphere "stone_0061" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+        )
+        {
+            rel material:binding:physics = </GravelWorld/PhysicsMaterials/gravel> (
+                bindMaterialAs = "weakerThanDescendants"
+            )
+            color3f[] primvars:displayColor = [(0.47915718, 0.4551993, 0.43124145)]
+            double radius = 0.0076553695925059735
+            double3 xformOp:translate = (2.580959003947074, -0.31357685686098474, 0.004593221755503584)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def Sphere "stone_0062" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+        )
+        {
+            rel material:binding:physics = </GravelWorld/PhysicsMaterials/gravel> (
+                bindMaterialAs = "weakerThanDescendants"
+            )
+            color3f[] primvars:displayColor = [(0.5503729, 0.52285427, 0.4953356)]
+            double radius = 0.013731972898479626
+            double3 xformOp:translate = (0.499985398993811, -0.22058736447377514, 0.008239183739087776)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def Sphere "stone_0063" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+        )
+        {
+            rel material:binding:physics = </GravelWorld/PhysicsMaterials/gravel> (
+                bindMaterialAs = "weakerThanDescendants"
+            )
+            color3f[] primvars:displayColor = [(0.59921926, 0.56925833, 0.53929734)]
+            double radius = 0.005943060488411045
+            double3 xformOp:translate = (1.2914276130929307, 0.5981453290253308, 0.003565836293046627)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def Sphere "stone_0064" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+        )
+        {
+            rel material:binding:physics = </GravelWorld/PhysicsMaterials/gravel> (
+                bindMaterialAs = "weakerThanDescendants"
+            )
+            color3f[] primvars:displayColor = [(0.58665186, 0.5573193, 0.5279867)]
+            double radius = 0.005952389374295229
+            double3 xformOp:translate = (0.06577156133520212, -0.28175950229951835, 0.003571433624577137)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def Sphere "stone_0065" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+        )
+        {
+            rel material:binding:physics = </GravelWorld/PhysicsMaterials/gravel> (
+                bindMaterialAs = "weakerThanDescendants"
+            )
+            color3f[] primvars:displayColor = [(0.43154937, 0.4099719, 0.38839442)]
+            double radius = 0.016451234257923712
+            double3 xformOp:translate = (3.396351212422714, -0.15656749351333926, 0.009870740554754226)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def Sphere "stone_0066" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+        )
+        {
+            rel material:binding:physics = </GravelWorld/PhysicsMaterials/gravel> (
+                bindMaterialAs = "weakerThanDescendants"
+            )
+            color3f[] primvars:displayColor = [(0.5974466, 0.56757426, 0.53770196)]
+            double radius = 0.01583868441031749
+            double3 xformOp:translate = (2.5176996254368547, 0.1340133188711401, 0.009503210646190493)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def Sphere "stone_0067" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+        )
+        {
+            rel material:binding:physics = </GravelWorld/PhysicsMaterials/gravel> (
+                bindMaterialAs = "weakerThanDescendants"
+            )
+            color3f[] primvars:displayColor = [(0.45987576, 0.43688196, 0.4138882)]
+            double radius = 0.013501692130239523
+            double3 xformOp:translate = (-0.9608844642392103, 0.3805249621385539, 0.008101015278143714)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def Sphere "stone_0068" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+        )
+        {
+            rel material:binding:physics = </GravelWorld/PhysicsMaterials/gravel> (
+                bindMaterialAs = "weakerThanDescendants"
+            )
+            color3f[] primvars:displayColor = [(0.42308572, 0.40193143, 0.38077715)]
+            double radius = 0.013624053294559003
+            double3 xformOp:translate = (3.694650019635519, -0.4388506627279587, 0.008174431976735402)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def Sphere "stone_0069" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+        )
+        {
+            rel material:binding:physics = </GravelWorld/PhysicsMaterials/gravel> (
+                bindMaterialAs = "weakerThanDescendants"
+            )
+            color3f[] primvars:displayColor = [(0.520966, 0.49491766, 0.46886936)]
+            double radius = 0.006391467710222429
+            double3 xformOp:translate = (1.7661182044240795, -0.2731821452222204, 0.0038348806261334573)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def Sphere "stone_0070" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+        )
+        {
+            rel material:binding:physics = </GravelWorld/PhysicsMaterials/gravel> (
+                bindMaterialAs = "weakerThanDescendants"
+            )
+            color3f[] primvars:displayColor = [(0.4527968, 0.43015695, 0.4075171)]
+            double radius = 0.014328958432804371
+            double3 xformOp:translate = (0.017986561637264753, 0.16108555066209562, 0.008597375059682623)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def Sphere "stone_0071" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+        )
+        {
+            rel material:binding:physics = </GravelWorld/PhysicsMaterials/gravel> (
+                bindMaterialAs = "weakerThanDescendants"
+            )
+            color3f[] primvars:displayColor = [(0.41845968, 0.3975367, 0.37661374)]
+            double radius = 0.011350914077941894
+            double3 xformOp:translate = (3.5266824553966165, 0.4153244559538266, 0.006810548446765137)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def Sphere "stone_0072" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+        )
+        {
+            rel material:binding:physics = </GravelWorld/PhysicsMaterials/gravel> (
+                bindMaterialAs = "weakerThanDescendants"
+            )
+            color3f[] primvars:displayColor = [(0.55422384, 0.5265126, 0.49880147)]
+            double radius = 0.010506485043328441
+            double3 xformOp:translate = (0.38340111986125835, -0.5957451730946612, 0.006303891025997065)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def Sphere "stone_0073" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+        )
+        {
+            rel material:binding:physics = </GravelWorld/PhysicsMaterials/gravel> (
+                bindMaterialAs = "weakerThanDescendants"
+            )
+            color3f[] primvars:displayColor = [(0.5103361, 0.4848193, 0.45930248)]
+            double radius = 0.013282473904917935
+            double3 xformOp:translate = (0.30977631217174095, 0.289477090017517, 0.00796948434295076)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def Sphere "stone_0074" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+        )
+        {
+            rel material:binding:physics = </GravelWorld/PhysicsMaterials/gravel> (
+                bindMaterialAs = "weakerThanDescendants"
+            )
+            color3f[] primvars:displayColor = [(0.5766213, 0.5477902, 0.51895916)]
+            double radius = 0.010559929946748831
+            double3 xformOp:translate = (-0.9516515019583002, -0.5097073679114795, 0.006335957968049298)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def Sphere "stone_0075" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+        )
+        {
+            rel material:binding:physics = </GravelWorld/PhysicsMaterials/gravel> (
+                bindMaterialAs = "weakerThanDescendants"
+            )
+            color3f[] primvars:displayColor = [(0.5165019, 0.49067682, 0.4648517)]
+            double radius = 0.016751071430278607
+            double3 xformOp:translate = (1.7279514460276117, 0.4015140238632201, 0.010050642858167164)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def Sphere "stone_0076" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+        )
+        {
+            rel material:binding:physics = </GravelWorld/PhysicsMaterials/gravel> (
+                bindMaterialAs = "weakerThanDescendants"
+            )
+            color3f[] primvars:displayColor = [(0.5797963, 0.55080646, 0.5218167)]
+            double radius = 0.0069252192123772744
+            double3 xformOp:translate = (-0.3627724035893062, -0.23008998008383957, 0.004155131527426364)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def Sphere "stone_0077" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+        )
+        {
+            rel material:binding:physics = </GravelWorld/PhysicsMaterials/gravel> (
+                bindMaterialAs = "weakerThanDescendants"
+            )
+            color3f[] primvars:displayColor = [(0.44201532, 0.41991454, 0.39781377)]
+            double radius = 0.01534958996354454
+            double3 xformOp:translate = (3.303512910004514, 0.47870956383176944, 0.009209753978126723)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def Sphere "stone_0078" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+        )
+        {
+            rel material:binding:physics = </GravelWorld/PhysicsMaterials/gravel> (
+                bindMaterialAs = "weakerThanDescendants"
+            )
+            color3f[] primvars:displayColor = [(0.57682693, 0.5479856, 0.51914424)]
+            double radius = 0.008243886609898016
+            double3 xformOp:translate = (-0.48603189164107186, 0.3361394902457312, 0.00494633196593881)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def Sphere "stone_0079" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+        )
+        {
+            rel material:binding:physics = </GravelWorld/PhysicsMaterials/gravel> (
+                bindMaterialAs = "weakerThanDescendants"
+            )
+            color3f[] primvars:displayColor = [(0.5859762, 0.5566774, 0.52737856)]
+            double radius = 0.010282906067817517
+            double3 xformOp:translate = (2.103307550753564, -0.41453599400135444, 0.00616974364069051)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def Sphere "stone_0080" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+        )
+        {
+            rel material:binding:physics = </GravelWorld/PhysicsMaterials/gravel> (
+                bindMaterialAs = "weakerThanDescendants"
+            )
+            color3f[] primvars:displayColor = [(0.5762832, 0.5474691, 0.51865494)]
+            double radius = 0.01623987405085953
+            double3 xformOp:translate = (3.881030164654814, 0.37292606392847627, 0.009743924430515718)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def Sphere "stone_0081" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+        )
+        {
+            rel material:binding:physics = </GravelWorld/PhysicsMaterials/gravel> (
+                bindMaterialAs = "weakerThanDescendants"
+            )
+            color3f[] primvars:displayColor = [(0.58616316, 0.556855, 0.5275469)]
+            double radius = 0.005322222704676453
+            double3 xformOp:translate = (2.6828223587754105, -0.20137743846428557, 0.003193333622805872)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def Sphere "stone_0082" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+        )
+        {
+            rel material:binding:physics = </GravelWorld/PhysicsMaterials/gravel> (
+                bindMaterialAs = "weakerThanDescendants"
+            )
+            color3f[] primvars:displayColor = [(0.45336115, 0.4306931, 0.40802503)]
+            double radius = 0.015429056806182805
+            double3 xformOp:translate = (3.3203201418763975, 0.3728991798892668, 0.009257434083709682)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def Sphere "stone_0083" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+        )
+        {
+            rel material:binding:physics = </GravelWorld/PhysicsMaterials/gravel> (
+                bindMaterialAs = "weakerThanDescendants"
+            )
+            color3f[] primvars:displayColor = [(0.57171863, 0.5431327, 0.5145468)]
+            double radius = 0.015235868618761122
+            double3 xformOp:translate = (-0.45952186798521444, 0.4466001394873077, 0.009141521171256673)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def Sphere "stone_0084" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+        )
+        {
+            rel material:binding:physics = </GravelWorld/PhysicsMaterials/gravel> (
+                bindMaterialAs = "weakerThanDescendants"
+            )
+            color3f[] primvars:displayColor = [(0.46103817, 0.43798625, 0.41493437)]
+            double radius = 0.007891638328093637
+            double3 xformOp:translate = (3.0829330279846445, -0.04763611838526949, 0.004734982996856182)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def Sphere "stone_0085" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+        )
+        {
+            rel material:binding:physics = </GravelWorld/PhysicsMaterials/gravel> (
+                bindMaterialAs = "weakerThanDescendants"
+            )
+            color3f[] primvars:displayColor = [(0.43862596, 0.41669467, 0.39476335)]
+            double radius = 0.015339491488987202
+            double3 xformOp:translate = (0.1379774370388518, -0.5716026783582582, 0.00920369489339232)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def Sphere "stone_0086" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+        )
+        {
+            rel material:binding:physics = </GravelWorld/PhysicsMaterials/gravel> (
+                bindMaterialAs = "weakerThanDescendants"
+            )
+            color3f[] primvars:displayColor = [(0.455825, 0.43303373, 0.4102425)]
+            double radius = 0.009267405365570185
+            double3 xformOp:translate = (3.321764710151432, 0.5602669248580333, 0.00556044321934211)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def Sphere "stone_0087" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+        )
+        {
+            rel material:binding:physics = </GravelWorld/PhysicsMaterials/gravel> (
+                bindMaterialAs = "weakerThanDescendants"
+            )
+            color3f[] primvars:displayColor = [(0.50724316, 0.481881, 0.45651883)]
+            double radius = 0.01333926260189916
+            double3 xformOp:translate = (0.9983919218003043, 0.577379624637912, 0.008003557561139496)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def Sphere "stone_0088" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+        )
+        {
+            rel material:binding:physics = </GravelWorld/PhysicsMaterials/gravel> (
+                bindMaterialAs = "weakerThanDescendants"
+            )
+            color3f[] primvars:displayColor = [(0.43571356, 0.41392788, 0.3921422)]
+            double radius = 0.017210082824221304
+            double3 xformOp:translate = (-0.42329124074286206, 0.5644807332266736, 0.010326049694532782)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def Sphere "stone_0089" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+        )
+        {
+            rel material:binding:physics = </GravelWorld/PhysicsMaterials/gravel> (
+                bindMaterialAs = "weakerThanDescendants"
+            )
+            color3f[] primvars:displayColor = [(0.48691276, 0.46256712, 0.43822148)]
+            double radius = 0.01751294610490022
+            double3 xformOp:translate = (0.327331812614843, -0.4699169433423467, 0.010507767662940131)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def Sphere "stone_0090" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+        )
+        {
+            rel material:binding:physics = </GravelWorld/PhysicsMaterials/gravel> (
+                bindMaterialAs = "weakerThanDescendants"
+            )
+            color3f[] primvars:displayColor = [(0.5022846, 0.47717038, 0.45205614)]
+            double radius = 0.014471085788485154
+            double3 xformOp:translate = (0.568386570974956, 0.12745062396737195, 0.008682651473091092)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def Sphere "stone_0091" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+        )
+        {
+            rel material:binding:physics = </GravelWorld/PhysicsMaterials/gravel> (
+                bindMaterialAs = "weakerThanDescendants"
+            )
+            color3f[] primvars:displayColor = [(0.54175705, 0.5146692, 0.48758134)]
+            double radius = 0.010007540633481454
+            double3 xformOp:translate = (1.8829402174829974, -0.29433299263370166, 0.006004524380088872)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def Sphere "stone_0092" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+        )
+        {
+            rel material:binding:physics = </GravelWorld/PhysicsMaterials/gravel> (
+                bindMaterialAs = "weakerThanDescendants"
+            )
+            color3f[] primvars:displayColor = [(0.543886, 0.5166917, 0.4894974)]
+            double radius = 0.005021986616842183
+            double3 xformOp:translate = (3.627875827495414, 0.046142396511350325, 0.00301319197010531)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def Sphere "stone_0093" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+        )
+        {
+            rel material:binding:physics = </GravelWorld/PhysicsMaterials/gravel> (
+                bindMaterialAs = "weakerThanDescendants"
+            )
+            color3f[] primvars:displayColor = [(0.41399476, 0.39329502, 0.37259528)]
+            double radius = 0.014645351011913194
+            double3 xformOp:translate = (2.3531425221649975, -0.16293423386248296, 0.008787210607147915)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def Sphere "stone_0094" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+        )
+        {
+            rel material:binding:physics = </GravelWorld/PhysicsMaterials/gravel> (
+                bindMaterialAs = "weakerThanDescendants"
+            )
+            color3f[] primvars:displayColor = [(0.5696031, 0.5411229, 0.51264274)]
+            double radius = 0.013635089903846539
+            double3 xformOp:translate = (0.6510001802129821, -0.22330122592996837, 0.008181053942307923)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def Sphere "stone_0095" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+        )
+        {
+            rel material:binding:physics = </GravelWorld/PhysicsMaterials/gravel> (
+                bindMaterialAs = "weakerThanDescendants"
+            )
+            color3f[] primvars:displayColor = [(0.48167858, 0.45759466, 0.43351072)]
+            double radius = 0.01435680541918135
+            double3 xformOp:translate = (0.501611341056321, -0.2288584053496161, 0.00861408325150881)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def Sphere "stone_0096" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+        )
+        {
+            rel material:binding:physics = </GravelWorld/PhysicsMaterials/gravel> (
+                bindMaterialAs = "weakerThanDescendants"
+            )
+            color3f[] primvars:displayColor = [(0.48408926, 0.4598848, 0.43568033)]
+            double radius = 0.010231205031750418
+            double3 xformOp:translate = (0.4782760126297352, -0.44725464112901614, 0.0061387230190502505)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def Sphere "stone_0097" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+        )
+        {
+            rel material:binding:physics = </GravelWorld/PhysicsMaterials/gravel> (
+                bindMaterialAs = "weakerThanDescendants"
+            )
+            color3f[] primvars:displayColor = [(0.523103, 0.49694782, 0.47079268)]
+            double radius = 0.017224727719492378
+            double3 xformOp:translate = (2.3865897263636646, 0.48336665487909924, 0.010334836631695427)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def Sphere "stone_0098" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+        )
+        {
+            rel material:binding:physics = </GravelWorld/PhysicsMaterials/gravel> (
+                bindMaterialAs = "weakerThanDescendants"
+            )
+            color3f[] primvars:displayColor = [(0.45738274, 0.4345136, 0.41164446)]
+            double radius = 0.008912348369352348
+            double3 xformOp:translate = (1.739686065678491, -0.5995128723632549, 0.005347409021611409)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def Sphere "stone_0099" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+        )
+        {
+            rel material:binding:physics = </GravelWorld/PhysicsMaterials/gravel> (
+                bindMaterialAs = "weakerThanDescendants"
+            )
+            color3f[] primvars:displayColor = [(0.49299765, 0.46834776, 0.44369787)]
+            double radius = 0.010588545949867849
+            double3 xformOp:translate = (1.8999239059784099, 0.1856467484436859, 0.006353127569920709)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def Sphere "stone_0100" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+        )
+        {
+            rel material:binding:physics = </GravelWorld/PhysicsMaterials/gravel> (
+                bindMaterialAs = "weakerThanDescendants"
+            )
+            color3f[] primvars:displayColor = [(0.58023614, 0.55122435, 0.52221256)]
+            double radius = 0.010748077390962497
+            double3 xformOp:translate = (0.06850700494550144, -0.032176576908808485, 0.0064488464345774975)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def Sphere "stone_0101" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+        )
+        {
+            rel material:binding:physics = </GravelWorld/PhysicsMaterials/gravel> (
+                bindMaterialAs = "weakerThanDescendants"
+            )
+            color3f[] primvars:displayColor = [(0.5030904, 0.47793588, 0.45278135)]
+            double radius = 0.015348321881648141
+            double3 xformOp:translate = (-0.15154301900972633, -0.49824535592985386, 0.009208993128988884)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def Sphere "stone_0102" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+        )
+        {
+            rel material:binding:physics = </GravelWorld/PhysicsMaterials/gravel> (
+                bindMaterialAs = "weakerThanDescendants"
+            )
+            color3f[] primvars:displayColor = [(0.55022764, 0.5227162, 0.49520487)]
+            double radius = 0.013228231124955345
+            double3 xformOp:translate = (0.6759412770490045, 0.38210815744399707, 0.007936938674973207)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def Sphere "stone_0103" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+        )
+        {
+            rel material:binding:physics = </GravelWorld/PhysicsMaterials/gravel> (
+                bindMaterialAs = "weakerThanDescendants"
+            )
+            color3f[] primvars:displayColor = [(0.40488508, 0.3846408, 0.36439657)]
+            double radius = 0.013746343717243169
+            double3 xformOp:translate = (0.12320332998644146, -0.361044080728108, 0.0082478062303459)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def Sphere "stone_0104" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+        )
+        {
+            rel material:binding:physics = </GravelWorld/PhysicsMaterials/gravel> (
+                bindMaterialAs = "weakerThanDescendants"
+            )
+            color3f[] primvars:displayColor = [(0.41456565, 0.39383736, 0.37310907)]
+            double radius = 0.008182953073018551
+            double3 xformOp:translate = (1.3756817210940255, 0.41968523354967824, 0.004909771843811131)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def Sphere "stone_0105" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+        )
+        {
+            rel material:binding:physics = </GravelWorld/PhysicsMaterials/gravel> (
+                bindMaterialAs = "weakerThanDescendants"
+            )
+            color3f[] primvars:displayColor = [(0.5392709, 0.5123073, 0.48534375)]
+            double radius = 0.01038773314297035
+            double3 xformOp:translate = (2.1488269036885685, -0.3666777159123488, 0.0062326398857822105)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def Sphere "stone_0106" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+        )
+        {
+            rel material:binding:physics = </GravelWorld/PhysicsMaterials/gravel> (
+                bindMaterialAs = "weakerThanDescendants"
+            )
+            color3f[] primvars:displayColor = [(0.40110895, 0.3810535, 0.36099806)]
+            double radius = 0.011426903197135678
+            double3 xformOp:translate = (0.21992219789219414, 0.18726961333414094, 0.006856141918281406)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def Sphere "stone_0107" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+        )
+        {
+            rel material:binding:physics = </GravelWorld/PhysicsMaterials/gravel> (
+                bindMaterialAs = "weakerThanDescendants"
+            )
+            color3f[] primvars:displayColor = [(0.48502925, 0.4607778, 0.43652633)]
+            double radius = 0.014762538196040145
+            double3 xformOp:translate = (2.8502309428701254, -0.47209524412375325, 0.008857522917624086)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def Sphere "stone_0108" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+        )
+        {
+            rel material:binding:physics = </GravelWorld/PhysicsMaterials/gravel> (
+                bindMaterialAs = "weakerThanDescendants"
+            )
+            color3f[] primvars:displayColor = [(0.4100437, 0.3895415, 0.3690393)]
+            double radius = 0.007286526862184912
+            double3 xformOp:translate = (3.7898302113976987, 0.021549300532488935, 0.0043719161173109465)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def Sphere "stone_0109" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+        )
+        {
+            rel material:binding:physics = </GravelWorld/PhysicsMaterials/gravel> (
+                bindMaterialAs = "weakerThanDescendants"
+            )
+            color3f[] primvars:displayColor = [(0.5602833, 0.5322692, 0.504255)]
+            double radius = 0.008239577635579632
+            double3 xformOp:translate = (3.2416817367582986, -0.052245809435792934, 0.004943746581347779)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def Sphere "stone_0110" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+        )
+        {
+            rel material:binding:physics = </GravelWorld/PhysicsMaterials/gravel> (
+                bindMaterialAs = "weakerThanDescendants"
+            )
+            color3f[] primvars:displayColor = [(0.5900079, 0.56050754, 0.5310071)]
+            double radius = 0.013678510523622588
+            double3 xformOp:translate = (3.9394622653322404, 0.1145427821633036, 0.008207106314173552)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def Sphere "stone_0111" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+        )
+        {
+            rel material:binding:physics = </GravelWorld/PhysicsMaterials/gravel> (
+                bindMaterialAs = "weakerThanDescendants"
+            )
+            color3f[] primvars:displayColor = [(0.50095564, 0.47590786, 0.45086008)]
+            double radius = 0.01658853703553568
+            double3 xformOp:translate = (2.0632616138088142, 0.2631287535311605, 0.009953122221321407)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def Sphere "stone_0112" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+        )
+        {
+            rel material:binding:physics = </GravelWorld/PhysicsMaterials/gravel> (
+                bindMaterialAs = "weakerThanDescendants"
+            )
+            color3f[] primvars:displayColor = [(0.5487311, 0.52129453, 0.49385798)]
+            double radius = 0.015797399206378394
+            double3 xformOp:translate = (1.739359753054142, 0.47664972387991467, 0.009478439523827036)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def Sphere "stone_0113" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+        )
+        {
+            rel material:binding:physics = </GravelWorld/PhysicsMaterials/gravel> (
+                bindMaterialAs = "weakerThanDescendants"
+            )
+            color3f[] primvars:displayColor = [(0.5275323, 0.5011557, 0.47477907)]
+            double radius = 0.011170767678699692
+            double3 xformOp:translate = (0.29595774232509675, -0.30331231498840855, 0.006702460607219815)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def Sphere "stone_0114" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+        )
+        {
+            rel material:binding:physics = </GravelWorld/PhysicsMaterials/gravel> (
+                bindMaterialAs = "weakerThanDescendants"
+            )
+            color3f[] primvars:displayColor = [(0.4549195, 0.43217352, 0.40942755)]
+            double radius = 0.014955577895863149
+            double3 xformOp:translate = (1.6064990641399106, 0.15209812437813752, 0.008973346737517889)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def Sphere "stone_0115" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+        )
+        {
+            rel material:binding:physics = </GravelWorld/PhysicsMaterials/gravel> (
+                bindMaterialAs = "weakerThanDescendants"
+            )
+            color3f[] primvars:displayColor = [(0.4639419, 0.44074482, 0.41754773)]
+            double radius = 0.006007283600241565
+            double3 xformOp:translate = (0.42864075431576243, -0.27394187150137844, 0.003604370160144939)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def Sphere "stone_0116" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+        )
+        {
+            rel material:binding:physics = </GravelWorld/PhysicsMaterials/gravel> (
+                bindMaterialAs = "weakerThanDescendants"
+            )
+            color3f[] primvars:displayColor = [(0.53879, 0.5118505, 0.48491096)]
+            double radius = 0.012021978892739933
+            double3 xformOp:translate = (-0.3081296924192214, -0.32248622432617585, 0.00721318733564396)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def Sphere "stone_0117" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+        )
+        {
+            rel material:binding:physics = </GravelWorld/PhysicsMaterials/gravel> (
+                bindMaterialAs = "weakerThanDescendants"
+            )
+            color3f[] primvars:displayColor = [(0.5085222, 0.48309612, 0.45767)]
+            double radius = 0.014183448842029177
+            double3 xformOp:translate = (-0.6788557464306096, -0.11088075640009593, 0.008510069305217506)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def Sphere "stone_0118" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+        )
+        {
+            rel material:binding:physics = </GravelWorld/PhysicsMaterials/gravel> (
+                bindMaterialAs = "weakerThanDescendants"
+            )
+            color3f[] primvars:displayColor = [(0.5809677, 0.5519193, 0.5228709)]
+            double radius = 0.010405065043341027
+            double3 xformOp:translate = (0.03417194757205122, -0.0958277786718893, 0.006243039026004616)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def Sphere "stone_0119" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+        )
+        {
+            rel material:binding:physics = </GravelWorld/PhysicsMaterials/gravel> (
+                bindMaterialAs = "weakerThanDescendants"
+            )
+            color3f[] primvars:displayColor = [(0.55311894, 0.525463, 0.49780703)]
+            double radius = 0.012593032384654926
+            double3 xformOp:translate = (2.4776149324898404, 0.42807843876472107, 0.007555819430792955)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def Sphere "stone_0120" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+        )
+        {
+            rel material:binding:physics = </GravelWorld/PhysicsMaterials/gravel> (
+                bindMaterialAs = "weakerThanDescendants"
+            )
+            color3f[] primvars:displayColor = [(0.550695, 0.5231603, 0.49562553)]
+            double radius = 0.009944953376060252
+            double3 xformOp:translate = (-0.9705195820800346, -0.17788943679381036, 0.005966972025636151)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def Sphere "stone_0121" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+        )
+        {
+            rel material:binding:physics = </GravelWorld/PhysicsMaterials/gravel> (
+                bindMaterialAs = "weakerThanDescendants"
+            )
+            color3f[] primvars:displayColor = [(0.54950315, 0.52202797, 0.49455282)]
+            double radius = 0.01609482335739836
+            double3 xformOp:translate = (3.7671516923505317, -0.09717446084421377, 0.009656894014439015)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def Sphere "stone_0122" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+        )
+        {
+            rel material:binding:physics = </GravelWorld/PhysicsMaterials/gravel> (
+                bindMaterialAs = "weakerThanDescendants"
+            )
+            color3f[] primvars:displayColor = [(0.4438843, 0.4216901, 0.3994959)]
+            double radius = 0.012099720026539907
+            double3 xformOp:translate = (2.016262944706207, -0.3353535668114173, 0.0072598320159239435)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def Sphere "stone_0123" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+        )
+        {
+            rel material:binding:physics = </GravelWorld/PhysicsMaterials/gravel> (
+                bindMaterialAs = "weakerThanDescendants"
+            )
+            color3f[] primvars:displayColor = [(0.53582835, 0.50903696, 0.48224553)]
+            double radius = 0.010665867688606275
+            double3 xformOp:translate = (-0.8548759002664238, -0.19664454756194105, 0.006399520613163765)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def Sphere "stone_0124" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+        )
+        {
+            rel material:binding:physics = </GravelWorld/PhysicsMaterials/gravel> (
+                bindMaterialAs = "weakerThanDescendants"
+            )
+            color3f[] primvars:displayColor = [(0.42552555, 0.40424928, 0.38297302)]
+            double radius = 0.010256116698789283
+            double3 xformOp:translate = (-0.1747763439824559, -0.0391318209212278, 0.00615367001927357)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def Sphere "stone_0125" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+        )
+        {
+            rel material:binding:physics = </GravelWorld/PhysicsMaterials/gravel> (
+                bindMaterialAs = "weakerThanDescendants"
+            )
+            color3f[] primvars:displayColor = [(0.5128784, 0.48723447, 0.46159056)]
+            double radius = 0.013089340492662839
+            double3 xformOp:translate = (-0.8651677404743116, -0.12717569239235432, 0.007853604295597703)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def Sphere "stone_0126" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+        )
+        {
+            rel material:binding:physics = </GravelWorld/PhysicsMaterials/gravel> (
+                bindMaterialAs = "weakerThanDescendants"
+            )
+            color3f[] primvars:displayColor = [(0.4923397, 0.4677227, 0.44310573)]
+            double radius = 0.005352326602424061
+            double3 xformOp:translate = (2.213748240046679, -0.4371606153233229, 0.0032113959614544366)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def Sphere "stone_0127" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+        )
+        {
+            rel material:binding:physics = </GravelWorld/PhysicsMaterials/gravel> (
+                bindMaterialAs = "weakerThanDescendants"
+            )
+            color3f[] primvars:displayColor = [(0.46536916, 0.4421007, 0.41883224)]
+            double radius = 0.005653700235352158
+            double3 xformOp:translate = (0.8955193209406977, -0.34600765894622215, 0.003392220141211295)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def Sphere "stone_0128" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+        )
+        {
+            rel material:binding:physics = </GravelWorld/PhysicsMaterials/gravel> (
+                bindMaterialAs = "weakerThanDescendants"
+            )
+            color3f[] primvars:displayColor = [(0.56638485, 0.5380656, 0.5097464)]
+            double radius = 0.01489598620262235
+            double3 xformOp:translate = (0.8956310778206813, 0.3024117882657418, 0.008937591721573409)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def Sphere "stone_0129" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+        )
+        {
+            rel material:binding:physics = </GravelWorld/PhysicsMaterials/gravel> (
+                bindMaterialAs = "weakerThanDescendants"
+            )
+            color3f[] primvars:displayColor = [(0.5078838, 0.48248962, 0.4570954)]
+            double radius = 0.008279529913170948
+            double3 xformOp:translate = (-0.5904688361917872, -0.5767400555399872, 0.004967717947902568)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def Sphere "stone_0130" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+        )
+        {
+            rel material:binding:physics = </GravelWorld/PhysicsMaterials/gravel> (
+                bindMaterialAs = "weakerThanDescendants"
+            )
+            color3f[] primvars:displayColor = [(0.55624664, 0.5284343, 0.500622)]
+            double radius = 0.01799880177061972
+            double3 xformOp:translate = (0.7498017186009196, 0.18017291189984996, 0.01079928106237183)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def Sphere "stone_0131" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+        )
+        {
+            rel material:binding:physics = </GravelWorld/PhysicsMaterials/gravel> (
+                bindMaterialAs = "weakerThanDescendants"
+            )
+            color3f[] primvars:displayColor = [(0.43987215, 0.41787854, 0.39588493)]
+            double radius = 0.01347281051817056
+            double3 xformOp:translate = (2.771166020297631, 0.5395340792591866, 0.008083686310902337)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def Sphere "stone_0132" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+        )
+        {
+            rel material:binding:physics = </GravelWorld/PhysicsMaterials/gravel> (
+                bindMaterialAs = "weakerThanDescendants"
+            )
+            color3f[] primvars:displayColor = [(0.5338918, 0.5071972, 0.4805026)]
+            double radius = 0.00526494022516432
+            double3 xformOp:translate = (-0.23808827107604813, -0.4485348301509525, 0.0031589641350985923)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def Sphere "stone_0133" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+        )
+        {
+            rel material:binding:physics = </GravelWorld/PhysicsMaterials/gravel> (
+                bindMaterialAs = "weakerThanDescendants"
+            )
+            color3f[] primvars:displayColor = [(0.5533796, 0.52571064, 0.49804166)]
+            double radius = 0.012331604565090248
+            double3 xformOp:translate = (0.08982270453251817, 0.23935796549538102, 0.007398962739054149)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def Sphere "stone_0134" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+        )
+        {
+            rel material:binding:physics = </GravelWorld/PhysicsMaterials/gravel> (
+                bindMaterialAs = "weakerThanDescendants"
+            )
+            color3f[] primvars:displayColor = [(0.42290658, 0.40176123, 0.38061592)]
+            double radius = 0.0071812588637814295
+            double3 xformOp:translate = (2.0362374694546586, 0.297510782346343, 0.0043087553182688575)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def Sphere "stone_0135" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+        )
+        {
+            rel material:binding:physics = </GravelWorld/PhysicsMaterials/gravel> (
+                bindMaterialAs = "weakerThanDescendants"
+            )
+            color3f[] primvars:displayColor = [(0.4051357, 0.3848789, 0.36462212)]
+            double radius = 0.015650915266044105
+            double3 xformOp:translate = (3.8236038651704387, -0.47028150041087213, 0.009390549159626463)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def Sphere "stone_0136" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+        )
+        {
+            rel material:binding:physics = </GravelWorld/PhysicsMaterials/gravel> (
+                bindMaterialAs = "weakerThanDescendants"
+            )
+            color3f[] primvars:displayColor = [(0.4793309, 0.45536435, 0.4313978)]
+            double radius = 0.009055444177131037
+            double3 xformOp:translate = (2.386736434252044, 0.5498074058470751, 0.005433266506278621)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def Sphere "stone_0137" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+        )
+        {
+            rel material:binding:physics = </GravelWorld/PhysicsMaterials/gravel> (
+                bindMaterialAs = "weakerThanDescendants"
+            )
+            color3f[] primvars:displayColor = [(0.5254485, 0.49917606, 0.47290364)]
+            double radius = 0.014295191165643088
+            double3 xformOp:translate = (-0.6200176107847002, 0.2287372991195764, 0.008577114699385853)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def Sphere "stone_0138" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+        )
+        {
+            rel material:binding:physics = </GravelWorld/PhysicsMaterials/gravel> (
+                bindMaterialAs = "weakerThanDescendants"
+            )
+            color3f[] primvars:displayColor = [(0.5200823, 0.49407822, 0.46807408)]
+            double radius = 0.006324716970797695
+            double3 xformOp:translate = (2.8624044247561202, 0.42035188690655556, 0.0037948301824786168)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def Sphere "stone_0139" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+        )
+        {
+            rel material:binding:physics = </GravelWorld/PhysicsMaterials/gravel> (
+                bindMaterialAs = "weakerThanDescendants"
+            )
+            color3f[] primvars:displayColor = [(0.46944076, 0.44596872, 0.42249668)]
+            double radius = 0.0065737158458750965
+            double3 xformOp:translate = (3.9192217575733563, 0.33916241563322347, 0.003944229507525058)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def Sphere "stone_0140" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+        )
+        {
+            rel material:binding:physics = </GravelWorld/PhysicsMaterials/gravel> (
+                bindMaterialAs = "weakerThanDescendants"
+            )
+            color3f[] primvars:displayColor = [(0.46824622, 0.44483393, 0.42142162)]
+            double radius = 0.010568914172051677
+            double3 xformOp:translate = (0.8528543810902809, 0.007152947612493521, 0.0063413485032310065)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def Sphere "stone_0141" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+        )
+        {
+            rel material:binding:physics = </GravelWorld/PhysicsMaterials/gravel> (
+                bindMaterialAs = "weakerThanDescendants"
+            )
+            color3f[] primvars:displayColor = [(0.59215754, 0.56254965, 0.53294176)]
+            double radius = 0.016044483150994503
+            double3 xformOp:translate = (3.11165459045029, -0.4733533552272017, 0.009626689890596701)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def Sphere "stone_0142" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+        )
+        {
+            rel material:binding:physics = </GravelWorld/PhysicsMaterials/gravel> (
+                bindMaterialAs = "weakerThanDescendants"
+            )
+            color3f[] primvars:displayColor = [(0.48709744, 0.46274257, 0.4383877)]
+            double radius = 0.013262606379318795
+            double3 xformOp:translate = (3.1435365550122913, 0.24877037244729228, 0.007957563827591276)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def Sphere "stone_0143" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+        )
+        {
+            rel material:binding:physics = </GravelWorld/PhysicsMaterials/gravel> (
+                bindMaterialAs = "weakerThanDescendants"
+            )
+            color3f[] primvars:displayColor = [(0.56163985, 0.53355783, 0.5054759)]
+            double radius = 0.014539338952174092
+            double3 xformOp:translate = (3.827368656190388, -0.275901124335119, 0.008723603371304454)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def Sphere "stone_0144" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+        )
+        {
+            rel material:binding:physics = </GravelWorld/PhysicsMaterials/gravel> (
+                bindMaterialAs = "weakerThanDescendants"
+            )
+            color3f[] primvars:displayColor = [(0.5462052, 0.518895, 0.49158472)]
+            double radius = 0.011996247783827324
+            double3 xformOp:translate = (1.4174875194159808, -0.07731060839532689, 0.007197748670296394)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def Sphere "stone_0145" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+        )
+        {
+            rel material:binding:physics = </GravelWorld/PhysicsMaterials/gravel> (
+                bindMaterialAs = "weakerThanDescendants"
+            )
+            color3f[] primvars:displayColor = [(0.4173326, 0.39646596, 0.37559932)]
+            double radius = 0.008489141994639928
+            double3 xformOp:translate = (3.258565800096659, 0.39687722266872405, 0.005093485196783956)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def Sphere "stone_0146" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+        )
+        {
+            rel material:binding:physics = </GravelWorld/PhysicsMaterials/gravel> (
+                bindMaterialAs = "weakerThanDescendants"
+            )
+            color3f[] primvars:displayColor = [(0.52206635, 0.49596304, 0.46985972)]
+            double radius = 0.016461205392036035
+            double3 xformOp:translate = (0.21931719595477994, -0.04234984007612197, 0.00987672323522162)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def Sphere "stone_0147" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+        )
+        {
+            rel material:binding:physics = </GravelWorld/PhysicsMaterials/gravel> (
+                bindMaterialAs = "weakerThanDescendants"
+            )
+            color3f[] primvars:displayColor = [(0.43636796, 0.41454956, 0.39273116)]
+            double radius = 0.009926860953667432
+            double3 xformOp:translate = (-0.8565000111495521, 0.42114340357495095, 0.005956116572200459)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def Sphere "stone_0148" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+        )
+        {
+            rel material:binding:physics = </GravelWorld/PhysicsMaterials/gravel> (
+                bindMaterialAs = "weakerThanDescendants"
+            )
+            color3f[] primvars:displayColor = [(0.576064, 0.5472608, 0.5184576)]
+            double radius = 0.007757558052336607
+            double3 xformOp:translate = (2.9891617841404825, -0.1915933882028596, 0.004654534831401964)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def Sphere "stone_0149" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+        )
+        {
+            rel material:binding:physics = </GravelWorld/PhysicsMaterials/gravel> (
+                bindMaterialAs = "weakerThanDescendants"
+            )
+            color3f[] primvars:displayColor = [(0.58961254, 0.5601319, 0.5306513)]
+            double radius = 0.014115388754318618
+            double3 xformOp:translate = (0.38134287878092454, -0.5878186626735874, 0.00846923325259117)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def Sphere "stone_0150" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+        )
+        {
+            rel material:binding:physics = </GravelWorld/PhysicsMaterials/gravel> (
+                bindMaterialAs = "weakerThanDescendants"
+            )
+            color3f[] primvars:displayColor = [(0.55163294, 0.5240513, 0.49646965)]
+            double radius = 0.006112968505454276
+            double3 xformOp:translate = (2.6003733205209714, -0.013706583781455173, 0.0036677811032725656)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def Sphere "stone_0151" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+        )
+        {
+            rel material:binding:physics = </GravelWorld/PhysicsMaterials/gravel> (
+                bindMaterialAs = "weakerThanDescendants"
+            )
+            color3f[] primvars:displayColor = [(0.5585866, 0.53065723, 0.5027279)]
+            double radius = 0.013977921412804798
+            double3 xformOp:translate = (2.2295144987047615, -0.011014397905696582, 0.008386752847682878)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def Sphere "stone_0152" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+        )
+        {
+            rel material:binding:physics = </GravelWorld/PhysicsMaterials/gravel> (
+                bindMaterialAs = "weakerThanDescendants"
+            )
+            color3f[] primvars:displayColor = [(0.46124122, 0.43817914, 0.41511708)]
+            double radius = 0.006209693557210731
+            double3 xformOp:translate = (0.10798200236265076, 0.23014458635424218, 0.0037258161343264387)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def Sphere "stone_0153" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+        )
+        {
+            rel material:binding:physics = </GravelWorld/PhysicsMaterials/gravel> (
+                bindMaterialAs = "weakerThanDescendants"
+            )
+            color3f[] primvars:displayColor = [(0.48510078, 0.46084574, 0.43659067)]
+            double radius = 0.012560222609320772
+            double3 xformOp:translate = (1.3663024437976237, 0.037106317374921316, 0.007536133565592463)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def Sphere "stone_0154" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+        )
+        {
+            rel material:binding:physics = </GravelWorld/PhysicsMaterials/gravel> (
+                bindMaterialAs = "weakerThanDescendants"
+            )
+            color3f[] primvars:displayColor = [(0.45418328, 0.43147412, 0.40876496)]
+            double radius = 0.014697160677276923
+            double3 xformOp:translate = (0.6539564859796507, 0.24342593062292273, 0.008818296406366154)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def Sphere "stone_0155" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+        )
+        {
+            rel material:binding:physics = </GravelWorld/PhysicsMaterials/gravel> (
+                bindMaterialAs = "weakerThanDescendants"
+            )
+            color3f[] primvars:displayColor = [(0.42391095, 0.4027154, 0.38151985)]
+            double radius = 0.008268247790612238
+            double3 xformOp:translate = (-0.3967205762384709, -0.3688988478581791, 0.004960948674367343)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def Sphere "stone_0156" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+        )
+        {
+            rel material:binding:physics = </GravelWorld/PhysicsMaterials/gravel> (
+                bindMaterialAs = "weakerThanDescendants"
+            )
+            color3f[] primvars:displayColor = [(0.44327694, 0.42111307, 0.39894924)]
+            double radius = 0.011966231549988746
+            double3 xformOp:translate = (2.810948047420515, -0.37782018907480563, 0.007179738929993247)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def Sphere "stone_0157" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+        )
+        {
+            rel material:binding:physics = </GravelWorld/PhysicsMaterials/gravel> (
+                bindMaterialAs = "weakerThanDescendants"
+            )
+            color3f[] primvars:displayColor = [(0.5049274, 0.47968102, 0.45443463)]
+            double radius = 0.011294581633765212
+            double3 xformOp:translate = (2.622925005465258, 0.5719284274596682, 0.006776748980259127)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def Sphere "stone_0158" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+        )
+        {
+            rel material:binding:physics = </GravelWorld/PhysicsMaterials/gravel> (
+                bindMaterialAs = "weakerThanDescendants"
+            )
+            color3f[] primvars:displayColor = [(0.44549662, 0.4232218, 0.40094697)]
+            double radius = 0.008678983142574415
+            double3 xformOp:translate = (-0.49736945954604617, -0.36705890629071186, 0.005207389885544649)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def Sphere "stone_0159" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+        )
+        {
+            rel material:binding:physics = </GravelWorld/PhysicsMaterials/gravel> (
+                bindMaterialAs = "weakerThanDescendants"
+            )
+            color3f[] primvars:displayColor = [(0.45486227, 0.43211916, 0.40937603)]
+            double radius = 0.0073327400679102425
+            double3 xformOp:translate = (-0.9292581637196808, 0.04096210712119597, 0.0043996440407461455)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def Sphere "stone_0160" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+        )
+        {
+            rel material:binding:physics = </GravelWorld/PhysicsMaterials/gravel> (
+                bindMaterialAs = "weakerThanDescendants"
+            )
+            color3f[] primvars:displayColor = [(0.4252559, 0.4039931, 0.3827303)]
+            double radius = 0.01766583410433559
+            double3 xformOp:translate = (1.7667948339930417, 0.23690087149223338, 0.010599500462601354)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def Sphere "stone_0161" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+        )
+        {
+            rel material:binding:physics = </GravelWorld/PhysicsMaterials/gravel> (
+                bindMaterialAs = "weakerThanDescendants"
+            )
+            color3f[] primvars:displayColor = [(0.5148128, 0.4890722, 0.46333155)]
+            double radius = 0.01628999556441827
+            double3 xformOp:translate = (1.4543934726188943, 0.4472636819982415, 0.009773997338650963)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def Sphere "stone_0162" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+        )
+        {
+            rel material:binding:physics = </GravelWorld/PhysicsMaterials/gravel> (
+                bindMaterialAs = "weakerThanDescendants"
+            )
+            color3f[] primvars:displayColor = [(0.41027534, 0.38976157, 0.36924782)]
+            double radius = 0.011102160284096631
+            double3 xformOp:translate = (1.2023439906800513, -0.3787635955319019, 0.006661296170457979)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def Sphere "stone_0163" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+        )
+        {
+            rel material:binding:physics = </GravelWorld/PhysicsMaterials/gravel> (
+                bindMaterialAs = "weakerThanDescendants"
+            )
+            color3f[] primvars:displayColor = [(0.4801415, 0.4561344, 0.43212733)]
+            double radius = 0.017233826757985342
+            double3 xformOp:translate = (1.3886459363284382, 0.3865387743593164, 0.010340296054791205)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def Sphere "stone_0164" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+        )
+        {
+            rel material:binding:physics = </GravelWorld/PhysicsMaterials/gravel> (
+                bindMaterialAs = "weakerThanDescendants"
+            )
+            color3f[] primvars:displayColor = [(0.42983952, 0.40834755, 0.38685557)]
+            double radius = 0.0059630682133233175
+            double3 xformOp:translate = (2.1472285347599915, -0.5356691108489602, 0.0035778409279939903)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def Sphere "stone_0165" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+        )
+        {
+            rel material:binding:physics = </GravelWorld/PhysicsMaterials/gravel> (
+                bindMaterialAs = "weakerThanDescendants"
+            )
+            color3f[] primvars:displayColor = [(0.42369032, 0.4025058, 0.38132128)]
+            double radius = 0.012316914762099333
+            double3 xformOp:translate = (0.5191775592111383, 0.5927017472522641, 0.007390148857259599)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def Sphere "stone_0166" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+        )
+        {
+            rel material:binding:physics = </GravelWorld/PhysicsMaterials/gravel> (
+                bindMaterialAs = "weakerThanDescendants"
+            )
+            color3f[] primvars:displayColor = [(0.44513744, 0.42288056, 0.40062368)]
+            double radius = 0.014937764789240523
+            double3 xformOp:translate = (2.031588256214814, 0.3488889958121033, 0.008962658873544313)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def Sphere "stone_0167" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+        )
+        {
+            rel material:binding:physics = </GravelWorld/PhysicsMaterials/gravel> (
+                bindMaterialAs = "weakerThanDescendants"
+            )
+            color3f[] primvars:displayColor = [(0.57203335, 0.54343164, 0.51483)]
+            double radius = 0.01179344295669283
+            double3 xformOp:translate = (1.2525723244437712, -0.06873479517680603, 0.007076065774015698)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def Sphere "stone_0168" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+        )
+        {
+            rel material:binding:physics = </GravelWorld/PhysicsMaterials/gravel> (
+                bindMaterialAs = "weakerThanDescendants"
+            )
+            color3f[] primvars:displayColor = [(0.52192616, 0.49582988, 0.46973357)]
+            double radius = 0.01787040638606837
+            double3 xformOp:translate = (0.5269012215968019, 0.14523278528657824, 0.010722243831641021)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def Sphere "stone_0169" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+        )
+        {
+            rel material:binding:physics = </GravelWorld/PhysicsMaterials/gravel> (
+                bindMaterialAs = "weakerThanDescendants"
+            )
+            color3f[] primvars:displayColor = [(0.44220504, 0.4200948, 0.39798453)]
+            double radius = 0.014621160971299084
+            double3 xformOp:translate = (3.7379510016268895, -0.3506545130117384, 0.00877269658277945)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def Sphere "stone_0170" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+        )
+        {
+            rel material:binding:physics = </GravelWorld/PhysicsMaterials/gravel> (
+                bindMaterialAs = "weakerThanDescendants"
+            )
+            color3f[] primvars:displayColor = [(0.415013, 0.3942623, 0.37351167)]
+            double radius = 0.013585565783496473
+            double3 xformOp:translate = (-0.21471453309561428, -0.3914237420082786, 0.008151339470097883)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def Sphere "stone_0171" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+        )
+        {
+            rel material:binding:physics = </GravelWorld/PhysicsMaterials/gravel> (
+                bindMaterialAs = "weakerThanDescendants"
+            )
+            color3f[] primvars:displayColor = [(0.45825186, 0.43533927, 0.41242668)]
+            double radius = 0.005034784393837514
+            double3 xformOp:translate = (1.2525185230885119, 0.11257343414347587, 0.0030208706363025087)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def Sphere "stone_0172" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+        )
+        {
+            rel material:binding:physics = </GravelWorld/PhysicsMaterials/gravel> (
+                bindMaterialAs = "weakerThanDescendants"
+            )
+            color3f[] primvars:displayColor = [(0.49080625, 0.46626595, 0.44172564)]
+            double radius = 0.008009191049228336
+            double3 xformOp:translate = (2.5347791493951664, 0.24358506971246063, 0.004805514629537001)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def Sphere "stone_0173" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+        )
+        {
+            rel material:binding:physics = </GravelWorld/PhysicsMaterials/gravel> (
+                bindMaterialAs = "weakerThanDescendants"
+            )
+            color3f[] primvars:displayColor = [(0.5250116, 0.49876103, 0.47251043)]
+            double radius = 0.013936003960926154
+            double3 xformOp:translate = (3.6195552224127434, 0.34539363197607764, 0.008361602376555692)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def Sphere "stone_0174" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+        )
+        {
+            rel material:binding:physics = </GravelWorld/PhysicsMaterials/gravel> (
+                bindMaterialAs = "weakerThanDescendants"
+            )
+            color3f[] primvars:displayColor = [(0.5089125, 0.48346686, 0.45802122)]
+            double radius = 0.013595379557093779
+            double3 xformOp:translate = (3.6683422922275666, -0.08983324067494602, 0.008157227734256266)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def Sphere "stone_0175" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+        )
+        {
+            rel material:binding:physics = </GravelWorld/PhysicsMaterials/gravel> (
+                bindMaterialAs = "weakerThanDescendants"
+            )
+            color3f[] primvars:displayColor = [(0.41428196, 0.39356786, 0.37285376)]
+            double radius = 0.013419251404232248
+            double3 xformOp:translate = (3.5420572260630303, 0.3919573915800715, 0.008051550842539348)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def Sphere "stone_0176" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+        )
+        {
+            rel material:binding:physics = </GravelWorld/PhysicsMaterials/gravel> (
+                bindMaterialAs = "weakerThanDescendants"
+            )
+            color3f[] primvars:displayColor = [(0.5138414, 0.48814934, 0.46245727)]
+            double radius = 0.00715699625986942
+            double3 xformOp:translate = (0.5380590630711626, 0.29874926648354794, 0.004294197755921652)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def Sphere "stone_0177" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+        )
+        {
+            rel material:binding:physics = </GravelWorld/PhysicsMaterials/gravel> (
+                bindMaterialAs = "weakerThanDescendants"
+            )
+            color3f[] primvars:displayColor = [(0.53994673, 0.5129494, 0.48595205)]
+            double radius = 0.008751937647975942
+            double3 xformOp:translate = (-0.37823170912645887, 0.2264135894545125, 0.005251162588785565)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def Sphere "stone_0178" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+        )
+        {
+            rel material:binding:physics = </GravelWorld/PhysicsMaterials/gravel> (
+                bindMaterialAs = "weakerThanDescendants"
+            )
+            color3f[] primvars:displayColor = [(0.41608837, 0.39528394, 0.37447953)]
+            double radius = 0.017254791129672528
+            double3 xformOp:translate = (1.5023608855896278, -0.007445736785898882, 0.010352874677803516)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def Sphere "stone_0179" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+        )
+        {
+            rel material:binding:physics = </GravelWorld/PhysicsMaterials/gravel> (
+                bindMaterialAs = "weakerThanDescendants"
+            )
+            color3f[] primvars:displayColor = [(0.45007357, 0.4275699, 0.40506622)]
+            double radius = 0.005518190194386969
+            double3 xformOp:translate = (1.1601433208038627, -0.21321409997004004, 0.0033109141166321816)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def Sphere "stone_0180" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+        )
+        {
+            rel material:binding:physics = </GravelWorld/PhysicsMaterials/gravel> (
+                bindMaterialAs = "weakerThanDescendants"
+            )
+            color3f[] primvars:displayColor = [(0.5150398, 0.48928782, 0.46353585)]
+            double radius = 0.006187249526202808
+            double3 xformOp:translate = (3.8095555109641834, 0.4031503366874175, 0.0037123497157216844)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def Sphere "stone_0181" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+        )
+        {
+            rel material:binding:physics = </GravelWorld/PhysicsMaterials/gravel> (
+                bindMaterialAs = "weakerThanDescendants"
+            )
+            color3f[] primvars:displayColor = [(0.4539022, 0.4312071, 0.408512)]
+            double radius = 0.01736022161148258
+            double3 xformOp:translate = (3.9978620843872568, 0.20673790116388713, 0.010416132966889547)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def Sphere "stone_0182" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+        )
+        {
+            rel material:binding:physics = </GravelWorld/PhysicsMaterials/gravel> (
+                bindMaterialAs = "weakerThanDescendants"
+            )
+            color3f[] primvars:displayColor = [(0.53030187, 0.5037868, 0.4772717)]
+            double radius = 0.0055230117508800105
+            double3 xformOp:translate = (2.7813441520627853, -0.03539901209803975, 0.003313807050528006)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def Sphere "stone_0183" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+        )
+        {
+            rel material:binding:physics = </GravelWorld/PhysicsMaterials/gravel> (
+                bindMaterialAs = "weakerThanDescendants"
+            )
+            color3f[] primvars:displayColor = [(0.5269569, 0.5006091, 0.47426125)]
+            double radius = 0.016908946243047975
+            double3 xformOp:translate = (-0.09255426388437038, 0.10239555033342529, 0.010145367745828785)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def Sphere "stone_0184" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+        )
+        {
+            rel material:binding:physics = </GravelWorld/PhysicsMaterials/gravel> (
+                bindMaterialAs = "weakerThanDescendants"
+            )
+            color3f[] primvars:displayColor = [(0.4666617, 0.4433286, 0.41999552)]
+            double radius = 0.011392435428483172
+            double3 xformOp:translate = (-0.5437879685308641, -0.18244673244641946, 0.006835461257089903)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def Sphere "stone_0185" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+        )
+        {
+            rel material:binding:physics = </GravelWorld/PhysicsMaterials/gravel> (
+                bindMaterialAs = "weakerThanDescendants"
+            )
+            color3f[] primvars:displayColor = [(0.53873473, 0.511798, 0.48486125)]
+            double radius = 0.013711735623775409
+            double3 xformOp:translate = (3.288665472001763, -0.20423560370524152, 0.008227041374265245)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def Sphere "stone_0186" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+        )
+        {
+            rel material:binding:physics = </GravelWorld/PhysicsMaterials/gravel> (
+                bindMaterialAs = "weakerThanDescendants"
+            )
+            color3f[] primvars:displayColor = [(0.5100193, 0.48451835, 0.4590174)]
+            double radius = 0.008746831339698925
+            double3 xformOp:translate = (3.7259676978160527, 0.37627924168556715, 0.005248098803819355)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def Sphere "stone_0187" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+        )
+        {
+            rel material:binding:physics = </GravelWorld/PhysicsMaterials/gravel> (
+                bindMaterialAs = "weakerThanDescendants"
+            )
+            color3f[] primvars:displayColor = [(0.59403694, 0.5643351, 0.5346333)]
+            double radius = 0.010912736811822482
+            double3 xformOp:translate = (0.5725857858508396, -0.21207145646880637, 0.006547642087093489)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def Sphere "stone_0188" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+        )
+        {
+            rel material:binding:physics = </GravelWorld/PhysicsMaterials/gravel> (
+                bindMaterialAs = "weakerThanDescendants"
+            )
+            color3f[] primvars:displayColor = [(0.53153205, 0.5049555, 0.47837886)]
+            double radius = 0.010254275741009691
+            double3 xformOp:translate = (1.5729812616455257, 0.585743057738105, 0.0061525654446058144)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def Sphere "stone_0189" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+        )
+        {
+            rel material:binding:physics = </GravelWorld/PhysicsMaterials/gravel> (
+                bindMaterialAs = "weakerThanDescendants"
+            )
+            color3f[] primvars:displayColor = [(0.47235587, 0.44873807, 0.4251203)]
+            double radius = 0.012053716726643534
+            double3 xformOp:translate = (1.0662378539966078, -0.37490095032656745, 0.00723223003598612)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def Sphere "stone_0190" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+        )
+        {
+            rel material:binding:physics = </GravelWorld/PhysicsMaterials/gravel> (
+                bindMaterialAs = "weakerThanDescendants"
+            )
+            color3f[] primvars:displayColor = [(0.44071165, 0.41867608, 0.39664048)]
+            double radius = 0.014833761002722455
+            double3 xformOp:translate = (2.1270437107250446, 0.3119886432732203, 0.008900256601633473)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def Sphere "stone_0191" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+        )
+        {
+            rel material:binding:physics = </GravelWorld/PhysicsMaterials/gravel> (
+                bindMaterialAs = "weakerThanDescendants"
+            )
+            color3f[] primvars:displayColor = [(0.53965, 0.5126675, 0.485685)]
+            double radius = 0.01213985530810931
+            double3 xformOp:translate = (3.638363804222239, -0.07426068591314605, 0.007283913184865586)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def Sphere "stone_0192" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+        )
+        {
+            rel material:binding:physics = </GravelWorld/PhysicsMaterials/gravel> (
+                bindMaterialAs = "weakerThanDescendants"
+            )
+            color3f[] primvars:displayColor = [(0.4478595, 0.4254665, 0.40307355)]
+            double radius = 0.006578539083714058
+            double3 xformOp:translate = (3.8657340791084716, 0.13064600049835795, 0.003947123450228435)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def Sphere "stone_0193" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+        )
+        {
+            rel material:binding:physics = </GravelWorld/PhysicsMaterials/gravel> (
+                bindMaterialAs = "weakerThanDescendants"
+            )
+            color3f[] primvars:displayColor = [(0.41864184, 0.39770976, 0.37677765)]
+            double radius = 0.0070589161294680215
+            double3 xformOp:translate = (1.7541950350133497, 0.06270169086447963, 0.004235349677680813)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def Sphere "stone_0194" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+        )
+        {
+            rel material:binding:physics = </GravelWorld/PhysicsMaterials/gravel> (
+                bindMaterialAs = "weakerThanDescendants"
+            )
+            color3f[] primvars:displayColor = [(0.42349324, 0.40231857, 0.3811439)]
+            double radius = 0.017899342812137852
+            double3 xformOp:translate = (3.56464939242084, -0.04626252698545996, 0.010739605687282711)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def Sphere "stone_0195" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+        )
+        {
+            rel material:binding:physics = </GravelWorld/PhysicsMaterials/gravel> (
+                bindMaterialAs = "weakerThanDescendants"
+            )
+            color3f[] primvars:displayColor = [(0.50177443, 0.47668567, 0.45159698)]
+            double radius = 0.015817861258995713
+            double3 xformOp:translate = (1.4918775235359765, 0.2599239911901493, 0.009490716755397427)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def Sphere "stone_0196" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+        )
+        {
+            rel material:binding:physics = </GravelWorld/PhysicsMaterials/gravel> (
+                bindMaterialAs = "weakerThanDescendants"
+            )
+            color3f[] primvars:displayColor = [(0.44874617, 0.42630887, 0.40387157)]
+            double radius = 0.008554523657272564
+            double3 xformOp:translate = (3.173619727883472, 0.5762935591240504, 0.005132714194363538)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def Sphere "stone_0197" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+        )
+        {
+            rel material:binding:physics = </GravelWorld/PhysicsMaterials/gravel> (
+                bindMaterialAs = "weakerThanDescendants"
+            )
+            color3f[] primvars:displayColor = [(0.5016482, 0.47656578, 0.45148337)]
+            double radius = 0.012166445999446104
+            double3 xformOp:translate = (0.9179300662357495, 0.5062417799178741, 0.007299867599667662)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def Sphere "stone_0198" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+        )
+        {
+            rel material:binding:physics = </GravelWorld/PhysicsMaterials/gravel> (
+                bindMaterialAs = "weakerThanDescendants"
+            )
+            color3f[] primvars:displayColor = [(0.5580012, 0.5301012, 0.50220114)]
+            double radius = 0.016431241316904186
+            double3 xformOp:translate = (3.320134672142941, -0.2685031166135508, 0.009858744790142511)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def Sphere "stone_0199" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+        )
+        {
+            rel material:binding:physics = </GravelWorld/PhysicsMaterials/gravel> (
+                bindMaterialAs = "weakerThanDescendants"
+            )
+            color3f[] primvars:displayColor = [(0.5641099, 0.5359044, 0.5076989)]
+            double radius = 0.010394251506167487
+            double3 xformOp:translate = (3.6712419684126, 0.009285210971587743, 0.006236550903700492)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def Sphere "stone_0200" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+        )
+        {
+            rel material:binding:physics = </GravelWorld/PhysicsMaterials/gravel> (
+                bindMaterialAs = "weakerThanDescendants"
+            )
+            color3f[] primvars:displayColor = [(0.59978044, 0.56979144, 0.53980243)]
+            double radius = 0.008676906782676746
+            double3 xformOp:translate = (0.49277924885883584, 0.10432526689699329, 0.005206144069606048)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def Sphere "stone_0201" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+        )
+        {
+            rel material:binding:physics = </GravelWorld/PhysicsMaterials/gravel> (
+                bindMaterialAs = "weakerThanDescendants"
+            )
+            color3f[] primvars:displayColor = [(0.46902478, 0.44557354, 0.4221223)]
+            double radius = 0.011365324506524112
+            double3 xformOp:translate = (-0.25702290808605444, 0.04629669324464847, 0.006819194703914467)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def Sphere "stone_0202" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+        )
+        {
+            rel material:binding:physics = </GravelWorld/PhysicsMaterials/gravel> (
+                bindMaterialAs = "weakerThanDescendants"
+            )
+            color3f[] primvars:displayColor = [(0.46435547, 0.4411377, 0.41791993)]
+            double radius = 0.012174926421920543
+            double3 xformOp:translate = (1.7171503147933649, -0.05358645976019871, 0.007304955853152325)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def Sphere "stone_0203" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+        )
+        {
+            rel material:binding:physics = </GravelWorld/PhysicsMaterials/gravel> (
+                bindMaterialAs = "weakerThanDescendants"
+            )
+            color3f[] primvars:displayColor = [(0.4467125, 0.42437688, 0.40204123)]
+            double radius = 0.0074524808581923705
+            double3 xformOp:translate = (2.4874921381028567, 0.08615717038188131, 0.004471488514915422)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def Sphere "stone_0204" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+        )
+        {
+            rel material:binding:physics = </GravelWorld/PhysicsMaterials/gravel> (
+                bindMaterialAs = "weakerThanDescendants"
+            )
+            color3f[] primvars:displayColor = [(0.54104555, 0.5139933, 0.486941)]
+            double radius = 0.015082078176290363
+            double3 xformOp:translate = (-0.7817635045134904, 0.2936461818782351, 0.009049246905774218)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def Sphere "stone_0205" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+        )
+        {
+            rel material:binding:physics = </GravelWorld/PhysicsMaterials/gravel> (
+                bindMaterialAs = "weakerThanDescendants"
+            )
+            color3f[] primvars:displayColor = [(0.5641495, 0.535942, 0.50773454)]
+            double radius = 0.015548315733343396
+            double3 xformOp:translate = (0.9303937624549117, 0.19642659538144158, 0.009328989440006038)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def Sphere "stone_0206" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+        )
+        {
+            rel material:binding:physics = </GravelWorld/PhysicsMaterials/gravel> (
+                bindMaterialAs = "weakerThanDescendants"
+            )
+            color3f[] primvars:displayColor = [(0.50045824, 0.47543532, 0.4504124)]
+            double radius = 0.017750635802577203
+            double3 xformOp:translate = (1.4766432480821177, -0.5555764663853086, 0.010650381481546322)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def Sphere "stone_0207" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+        )
+        {
+            rel material:binding:physics = </GravelWorld/PhysicsMaterials/gravel> (
+                bindMaterialAs = "weakerThanDescendants"
+            )
+            color3f[] primvars:displayColor = [(0.48806125, 0.46365818, 0.43925512)]
+            double radius = 0.012672345581024369
+            double3 xformOp:translate = (3.348501566811077, 0.44902844886517, 0.007603407348614621)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def Sphere "stone_0208" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+        )
+        {
+            rel material:binding:physics = </GravelWorld/PhysicsMaterials/gravel> (
+                bindMaterialAs = "weakerThanDescendants"
+            )
+            color3f[] primvars:displayColor = [(0.48199573, 0.45789593, 0.43379614)]
+            double radius = 0.011837364128498298
+            double3 xformOp:translate = (1.2846403723712112, 0.26693259308477113, 0.0071024184770989785)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def Sphere "stone_0209" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+        )
+        {
+            rel material:binding:physics = </GravelWorld/PhysicsMaterials/gravel> (
+                bindMaterialAs = "weakerThanDescendants"
+            )
+            color3f[] primvars:displayColor = [(0.5938407, 0.56414866, 0.5344567)]
+            double radius = 0.013512157243560537
+            double3 xformOp:translate = (-0.22819390614225576, -0.03661127881832171, 0.008107294346136322)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def Sphere "stone_0210" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+        )
+        {
+            rel material:binding:physics = </GravelWorld/PhysicsMaterials/gravel> (
+                bindMaterialAs = "weakerThanDescendants"
+            )
+            color3f[] primvars:displayColor = [(0.57035303, 0.5418354, 0.51331776)]
+            double radius = 0.009401296042668612
+            double3 xformOp:translate = (2.4635229929344105, 0.17980398309512713, 0.005640777625601167)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def Sphere "stone_0211" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+        )
+        {
+            rel material:binding:physics = </GravelWorld/PhysicsMaterials/gravel> (
+                bindMaterialAs = "weakerThanDescendants"
+            )
+            color3f[] primvars:displayColor = [(0.46333224, 0.4401656, 0.416999)]
+            double radius = 0.016080437375356606
+            double3 xformOp:translate = (3.296710920841333, -0.14398872297281395, 0.009648262425213964)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def Sphere "stone_0212" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+        )
+        {
+            rel material:binding:physics = </GravelWorld/PhysicsMaterials/gravel> (
+                bindMaterialAs = "weakerThanDescendants"
+            )
+            color3f[] primvars:displayColor = [(0.40717983, 0.38682082, 0.36646184)]
+            double radius = 0.014343326527898777
+            double3 xformOp:translate = (2.797009046671818, 0.4468596208782435, 0.008605995916739266)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def Sphere "stone_0213" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+        )
+        {
+            rel material:binding:physics = </GravelWorld/PhysicsMaterials/gravel> (
+                bindMaterialAs = "weakerThanDescendants"
+            )
+            color3f[] primvars:displayColor = [(0.59948516, 0.56951094, 0.53953665)]
+            double radius = 0.005889469713360169
+            double3 xformOp:translate = (2.1558050842732026, 0.505114918536356, 0.0035336818280161013)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def Sphere "stone_0214" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+        )
+        {
+            rel material:binding:physics = </GravelWorld/PhysicsMaterials/gravel> (
+                bindMaterialAs = "weakerThanDescendants"
+            )
+            color3f[] primvars:displayColor = [(0.52674955, 0.5004121, 0.4740746)]
+            double radius = 0.01470796276759305
+            double3 xformOp:translate = (1.1698573596156283, -0.4818682483401624, 0.00882477766055583)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def Sphere "stone_0215" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+        )
+        {
+            rel material:binding:physics = </GravelWorld/PhysicsMaterials/gravel> (
+                bindMaterialAs = "weakerThanDescendants"
+            )
+            color3f[] primvars:displayColor = [(0.58068484, 0.5516506, 0.5226163)]
+            double radius = 0.01634353002389218
+            double3 xformOp:translate = (1.218392758308529, 0.2328013953518815, 0.009806118014335306)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def Sphere "stone_0216" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+        )
+        {
+            rel material:binding:physics = </GravelWorld/PhysicsMaterials/gravel> (
+                bindMaterialAs = "weakerThanDescendants"
+            )
+            color3f[] primvars:displayColor = [(0.47496822, 0.4512198, 0.4274714)]
+            double radius = 0.0055978825928037655
+            double3 xformOp:translate = (2.980717325811059, -0.24795866884174944, 0.0033587295556822593)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def Sphere "stone_0217" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+        )
+        {
+            rel material:binding:physics = </GravelWorld/PhysicsMaterials/gravel> (
+                bindMaterialAs = "weakerThanDescendants"
+            )
+            color3f[] primvars:displayColor = [(0.55850387, 0.5305787, 0.5026535)]
+            double radius = 0.00689240734409218
+            double3 xformOp:translate = (1.6558315907438002, 0.07911367429912419, 0.004135444406455308)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def Sphere "stone_0218" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+        )
+        {
+            rel material:binding:physics = </GravelWorld/PhysicsMaterials/gravel> (
+                bindMaterialAs = "weakerThanDescendants"
+            )
+            color3f[] primvars:displayColor = [(0.52394205, 0.49774498, 0.47154787)]
+            double radius = 0.007209787437885265
+            double3 xformOp:translate = (-0.6051582467000268, 0.4450075183738257, 0.004325872462731159)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def Sphere "stone_0219" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+        )
+        {
+            rel material:binding:physics = </GravelWorld/PhysicsMaterials/gravel> (
+                bindMaterialAs = "weakerThanDescendants"
+            )
+            color3f[] primvars:displayColor = [(0.49222997, 0.4676185, 0.443007)]
+            double radius = 0.00813078729413207
+            double3 xformOp:translate = (3.5641450801177736, -0.42825873584578844, 0.004878472376479242)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def Sphere "stone_0220" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+        )
+        {
+            rel material:binding:physics = </GravelWorld/PhysicsMaterials/gravel> (
+                bindMaterialAs = "weakerThanDescendants"
+            )
+            color3f[] primvars:displayColor = [(0.5609266, 0.5328803, 0.50483394)]
+            double radius = 0.00830170541237605
+            double3 xformOp:translate = (0.2766335407957703, -0.5887230822541547, 0.00498102324742563)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def Sphere "stone_0221" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+        )
+        {
+            rel material:binding:physics = </GravelWorld/PhysicsMaterials/gravel> (
+                bindMaterialAs = "weakerThanDescendants"
+            )
+            color3f[] primvars:displayColor = [(0.48834595, 0.46392867, 0.43951136)]
+            double radius = 0.016715722506785477
+            double3 xformOp:translate = (2.3880544284953973, -0.4104292535138556, 0.010029433504071286)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def Sphere "stone_0222" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+        )
+        {
+            rel material:binding:physics = </GravelWorld/PhysicsMaterials/gravel> (
+                bindMaterialAs = "weakerThanDescendants"
+            )
+            color3f[] primvars:displayColor = [(0.4848618, 0.4606187, 0.43637562)]
+            double radius = 0.00949235311776006
+            double3 xformOp:translate = (1.937858525632107, 0.16672644283201454, 0.005695411870656036)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def Sphere "stone_0223" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+        )
+        {
+            rel material:binding:physics = </GravelWorld/PhysicsMaterials/gravel> (
+                bindMaterialAs = "weakerThanDescendants"
+            )
+            color3f[] primvars:displayColor = [(0.47693864, 0.4530917, 0.4292448)]
+            double radius = 0.008251276917300116
+            double3 xformOp:translate = (3.226519625712993, -0.3609396010693292, 0.004950766150380069)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def Sphere "stone_0224" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+        )
+        {
+            rel material:binding:physics = </GravelWorld/PhysicsMaterials/gravel> (
+                bindMaterialAs = "weakerThanDescendants"
+            )
+            color3f[] primvars:displayColor = [(0.5149624, 0.48921427, 0.46346614)]
+            double radius = 0.011281704793769809
+            double3 xformOp:translate = (0.1860285096378731, 0.08630723082088665, 0.006769022876261885)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def Sphere "stone_0225" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+        )
+        {
+            rel material:binding:physics = </GravelWorld/PhysicsMaterials/gravel> (
+                bindMaterialAs = "weakerThanDescendants"
+            )
+            color3f[] primvars:displayColor = [(0.53164595, 0.50506365, 0.47848135)]
+            double radius = 0.017904996567149667
+            double3 xformOp:translate = (0.4761537694163467, 0.5735333814922351, 0.0107429979402898)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def Sphere "stone_0226" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+        )
+        {
+            rel material:binding:physics = </GravelWorld/PhysicsMaterials/gravel> (
+                bindMaterialAs = "weakerThanDescendants"
+            )
+            color3f[] primvars:displayColor = [(0.54893374, 0.52148706, 0.4940404)]
+            double radius = 0.00856824494231696
+            double3 xformOp:translate = (1.8296450847784946, 0.22295939128081455, 0.005140946965390175)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def Sphere "stone_0227" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+        )
+        {
+            rel material:binding:physics = </GravelWorld/PhysicsMaterials/gravel> (
+                bindMaterialAs = "weakerThanDescendants"
+            )
+            color3f[] primvars:displayColor = [(0.58083105, 0.5517895, 0.52274793)]
+            double radius = 0.0056375752600879995
+            double3 xformOp:translate = (2.0320324653823727, -0.0039272561713555865, 0.0033825451560527994)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def Sphere "stone_0228" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+        )
+        {
+            rel material:binding:physics = </GravelWorld/PhysicsMaterials/gravel> (
+                bindMaterialAs = "weakerThanDescendants"
+            )
+            color3f[] primvars:displayColor = [(0.4704642, 0.446941, 0.42341778)]
+            double radius = 0.008720523968969527
+            double3 xformOp:translate = (2.9943005975379937, 0.1284779977971191, 0.005232314381381716)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def Sphere "stone_0229" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+        )
+        {
+            rel material:binding:physics = </GravelWorld/PhysicsMaterials/gravel> (
+                bindMaterialAs = "weakerThanDescendants"
+            )
+            color3f[] primvars:displayColor = [(0.5441857, 0.5169764, 0.4897671)]
+            double radius = 0.013276032414076593
+            double3 xformOp:translate = (2.1044558156515207, 0.21331735034803134, 0.007965619448445956)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def Sphere "stone_0230" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+        )
+        {
+            rel material:binding:physics = </GravelWorld/PhysicsMaterials/gravel> (
+                bindMaterialAs = "weakerThanDescendants"
+            )
+            color3f[] primvars:displayColor = [(0.5806807, 0.5516467, 0.5226127)]
+            double radius = 0.013569360024117797
+            double3 xformOp:translate = (3.191685584812583, 0.15389772442427796, 0.008141616014470677)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def Sphere "stone_0231" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+        )
+        {
+            rel material:binding:physics = </GravelWorld/PhysicsMaterials/gravel> (
+                bindMaterialAs = "weakerThanDescendants"
+            )
+            color3f[] primvars:displayColor = [(0.51591474, 0.490119, 0.46432328)]
+            double radius = 0.013402427915576796
+            double3 xformOp:translate = (0.5446644197631803, -0.07101217180462616, 0.008041456749346077)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def Sphere "stone_0232" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+        )
+        {
+            rel material:binding:physics = </GravelWorld/PhysicsMaterials/gravel> (
+                bindMaterialAs = "weakerThanDescendants"
+            )
+            color3f[] primvars:displayColor = [(0.5494962, 0.52202135, 0.49454656)]
+            double radius = 0.014520676983210096
+            double3 xformOp:translate = (-0.5493331212689053, -0.24586745804501364, 0.008712406189926058)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def Sphere "stone_0233" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+        )
+        {
+            rel material:binding:physics = </GravelWorld/PhysicsMaterials/gravel> (
+                bindMaterialAs = "weakerThanDescendants"
+            )
+            color3f[] primvars:displayColor = [(0.59429795, 0.564583, 0.5348681)]
+            double radius = 0.007283320915775986
+            double3 xformOp:translate = (-0.33920101126608226, 0.04728931078130527, 0.004369992549465592)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def Sphere "stone_0234" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+        )
+        {
+            rel material:binding:physics = </GravelWorld/PhysicsMaterials/gravel> (
+                bindMaterialAs = "weakerThanDescendants"
+            )
+            color3f[] primvars:displayColor = [(0.45139402, 0.4288243, 0.40625462)]
+            double radius = 0.011901080858136204
+            double3 xformOp:translate = (3.5674348724084846, 0.39656714348087685, 0.007140648514881722)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def Sphere "stone_0235" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+        )
+        {
+            rel material:binding:physics = </GravelWorld/PhysicsMaterials/gravel> (
+                bindMaterialAs = "weakerThanDescendants"
+            )
+            color3f[] primvars:displayColor = [(0.5493119, 0.5218463, 0.49438068)]
+            double radius = 0.015720967563051292
+            double3 xformOp:translate = (1.4092391493687062, 0.36778619255251976, 0.009432580537830774)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def Sphere "stone_0236" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+        )
+        {
+            rel material:binding:physics = </GravelWorld/PhysicsMaterials/gravel> (
+                bindMaterialAs = "weakerThanDescendants"
+            )
+            color3f[] primvars:displayColor = [(0.4281514, 0.40674382, 0.38533625)]
+            double radius = 0.00940329829942452
+            double3 xformOp:translate = (-0.42415146275120297, 0.555471951442653, 0.005641978979654712)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def Sphere "stone_0237" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+        )
+        {
+            rel material:binding:physics = </GravelWorld/PhysicsMaterials/gravel> (
+                bindMaterialAs = "weakerThanDescendants"
+            )
+            color3f[] primvars:displayColor = [(0.59598845, 0.56618905, 0.5363896)]
+            double radius = 0.017564502723015775
+            double3 xformOp:translate = (3.3007029844941087, 0.26906005449062187, 0.010538701633809464)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def Sphere "stone_0238" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+        )
+        {
+            rel material:binding:physics = </GravelWorld/PhysicsMaterials/gravel> (
+                bindMaterialAs = "weakerThanDescendants"
+            )
+            color3f[] primvars:displayColor = [(0.5581364, 0.53022957, 0.50232273)]
+            double radius = 0.017574506714900417
+            double3 xformOp:translate = (3.0229382201028097, -0.16106994071332031, 0.01054470402894025)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def Sphere "stone_0239" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+        )
+        {
+            rel material:binding:physics = </GravelWorld/PhysicsMaterials/gravel> (
+                bindMaterialAs = "weakerThanDescendants"
+            )
+            color3f[] primvars:displayColor = [(0.5345657, 0.5078374, 0.4811091)]
+            double radius = 0.005180942516311716
+            double3 xformOp:translate = (1.6828615413452956, -0.054256766719350424, 0.003108565509787029)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def Sphere "stone_0240" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+        )
+        {
+            rel material:binding:physics = </GravelWorld/PhysicsMaterials/gravel> (
+                bindMaterialAs = "weakerThanDescendants"
+            )
+            color3f[] primvars:displayColor = [(0.58805835, 0.55865544, 0.5292525)]
+            double radius = 0.013740430365563168
+            double3 xformOp:translate = (1.9228004582608302, 0.38690076147212904, 0.008244258219337901)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def Sphere "stone_0241" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+        )
+        {
+            rel material:binding:physics = </GravelWorld/PhysicsMaterials/gravel> (
+                bindMaterialAs = "weakerThanDescendants"
+            )
+            color3f[] primvars:displayColor = [(0.57684696, 0.5480046, 0.5191623)]
+            double radius = 0.006408499328589999
+            double3 xformOp:translate = (0.16910951105791572, -0.5699704204242212, 0.0038450995971539993)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def Sphere "stone_0242" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+        )
+        {
+            rel material:binding:physics = </GravelWorld/PhysicsMaterials/gravel> (
+                bindMaterialAs = "weakerThanDescendants"
+            )
+            color3f[] primvars:displayColor = [(0.4126434, 0.39201123, 0.37137908)]
+            double radius = 0.012298295969248424
+            double3 xformOp:translate = (3.5762795437157973, -0.33435935991121196, 0.007378977581549054)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def Sphere "stone_0243" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+        )
+        {
+            rel material:binding:physics = </GravelWorld/PhysicsMaterials/gravel> (
+                bindMaterialAs = "weakerThanDescendants"
+            )
+            color3f[] primvars:displayColor = [(0.48165917, 0.45757622, 0.43349326)]
+            double radius = 0.015710119568075817
+            double3 xformOp:translate = (3.5469381921394607, -0.2373717905648997, 0.00942607174084549)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def Sphere "stone_0244" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+        )
+        {
+            rel material:binding:physics = </GravelWorld/PhysicsMaterials/gravel> (
+                bindMaterialAs = "weakerThanDescendants"
+            )
+            color3f[] primvars:displayColor = [(0.49852493, 0.4735987, 0.44867244)]
+            double radius = 0.006817101162593874
+            double3 xformOp:translate = (3.731307664409731, -0.2347624987727937, 0.004090260697556324)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def Sphere "stone_0245" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+        )
+        {
+            rel material:binding:physics = </GravelWorld/PhysicsMaterials/gravel> (
+                bindMaterialAs = "weakerThanDescendants"
+            )
+            color3f[] primvars:displayColor = [(0.49072877, 0.4661923, 0.44165587)]
+            double radius = 0.006263495982083681
+            double3 xformOp:translate = (3.436296542642512, -0.43720314155239615, 0.0037580975892502083)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def Sphere "stone_0246" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+        )
+        {
+            rel material:binding:physics = </GravelWorld/PhysicsMaterials/gravel> (
+                bindMaterialAs = "weakerThanDescendants"
+            )
+            color3f[] primvars:displayColor = [(0.48382536, 0.4596341, 0.4354428)]
+            double radius = 0.013716320845052223
+            double3 xformOp:translate = (2.7157006076158576, 0.5351689029353185, 0.008229792507031333)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def Sphere "stone_0247" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+        )
+        {
+            rel material:binding:physics = </GravelWorld/PhysicsMaterials/gravel> (
+                bindMaterialAs = "weakerThanDescendants"
+            )
+            color3f[] primvars:displayColor = [(0.41980433, 0.3988141, 0.3778239)]
+            double radius = 0.014649497191949103
+            double3 xformOp:translate = (-0.22738548795082492, -0.10213856707583169, 0.008789698315169462)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def Sphere "stone_0248" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+        )
+        {
+            rel material:binding:physics = </GravelWorld/PhysicsMaterials/gravel> (
+                bindMaterialAs = "weakerThanDescendants"
+            )
+            color3f[] primvars:displayColor = [(0.40654325, 0.3862161, 0.36588892)]
+            double radius = 0.011361511491264988
+            double3 xformOp:translate = (1.0405794284885026, 0.5418258304572713, 0.006816906894758993)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def Sphere "stone_0249" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+        )
+        {
+            rel material:binding:physics = </GravelWorld/PhysicsMaterials/gravel> (
+                bindMaterialAs = "weakerThanDescendants"
+            )
+            color3f[] primvars:displayColor = [(0.57109004, 0.54253554, 0.51398104)]
+            double radius = 0.009816889463547659
+            double3 xformOp:translate = (1.2169154303035081, 0.5406662038217124, 0.0058901336781285955)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def Sphere "stone_0250" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+        )
+        {
+            rel material:binding:physics = </GravelWorld/PhysicsMaterials/gravel> (
+                bindMaterialAs = "weakerThanDescendants"
+            )
+            color3f[] primvars:displayColor = [(0.5955685, 0.56579006, 0.53601164)]
+            double radius = 0.006291610119879694
+            double3 xformOp:translate = (2.428401327406427, 0.05335903377857387, 0.0037749660719278164)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def Sphere "stone_0251" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+        )
+        {
+            rel material:binding:physics = </GravelWorld/PhysicsMaterials/gravel> (
+                bindMaterialAs = "weakerThanDescendants"
+            )
+            color3f[] primvars:displayColor = [(0.42443195, 0.40321034, 0.38198876)]
+            double radius = 0.009662759935760133
+            double3 xformOp:translate = (0.9906982137218654, -0.3722297254067045, 0.005797655961456079)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def Sphere "stone_0252" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+        )
+        {
+            rel material:binding:physics = </GravelWorld/PhysicsMaterials/gravel> (
+                bindMaterialAs = "weakerThanDescendants"
+            )
+            color3f[] primvars:displayColor = [(0.5283409, 0.50192386, 0.4755068)]
+            double radius = 0.01602443145002785
+            double3 xformOp:translate = (1.2735868428525858, 0.1953224856743736, 0.00961465887001671)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def Sphere "stone_0253" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+        )
+        {
+            rel material:binding:physics = </GravelWorld/PhysicsMaterials/gravel> (
+                bindMaterialAs = "weakerThanDescendants"
+            )
+            color3f[] primvars:displayColor = [(0.44871378, 0.42627808, 0.4038424)]
+            double radius = 0.012762897473754085
+            double3 xformOp:translate = (-0.8932127263181469, 0.34415350854554005, 0.0076577384842524505)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def Sphere "stone_0254" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+        )
+        {
+            rel material:binding:physics = </GravelWorld/PhysicsMaterials/gravel> (
+                bindMaterialAs = "weakerThanDescendants"
+            )
+            color3f[] primvars:displayColor = [(0.5530315, 0.5253799, 0.49772832)]
+            double radius = 0.006637010509004558
+            double3 xformOp:translate = (1.8228898795398165, -0.5176678166107729, 0.003982206305402735)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def Sphere "stone_0255" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+        )
+        {
+            rel material:binding:physics = </GravelWorld/PhysicsMaterials/gravel> (
+                bindMaterialAs = "weakerThanDescendants"
+            )
+            color3f[] primvars:displayColor = [(0.46571192, 0.44242632, 0.41914073)]
+            double radius = 0.00769304581450656
+            double3 xformOp:translate = (0.0797567595933737, 0.4436345121234536, 0.004615827488703936)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def Sphere "stone_0256" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+        )
+        {
+            rel material:binding:physics = </GravelWorld/PhysicsMaterials/gravel> (
+                bindMaterialAs = "weakerThanDescendants"
+            )
+            color3f[] primvars:displayColor = [(0.5716812, 0.54309714, 0.5145131)]
+            double radius = 0.006918204339238768
+            double3 xformOp:translate = (3.5026551781587907, -0.5965973382239803, 0.004150922603543261)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def Sphere "stone_0257" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+        )
+        {
+            rel material:binding:physics = </GravelWorld/PhysicsMaterials/gravel> (
+                bindMaterialAs = "weakerThanDescendants"
+            )
+            color3f[] primvars:displayColor = [(0.43489942, 0.41315445, 0.3914095)]
+            double radius = 0.006880943744166604
+            double3 xformOp:translate = (-0.350039342782816, -0.2992149639262514, 0.004128566246499962)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def Sphere "stone_0258" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+        )
+        {
+            rel material:binding:physics = </GravelWorld/PhysicsMaterials/gravel> (
+                bindMaterialAs = "weakerThanDescendants"
+            )
+            color3f[] primvars:displayColor = [(0.5579969, 0.53009707, 0.50219727)]
+            double radius = 0.013593749353765117
+            double3 xformOp:translate = (-0.8710992510690082, -0.5821676073231493, 0.008156249612259069)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def Sphere "stone_0259" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+        )
+        {
+            rel material:binding:physics = </GravelWorld/PhysicsMaterials/gravel> (
+                bindMaterialAs = "weakerThanDescendants"
+            )
+            color3f[] primvars:displayColor = [(0.4104798, 0.38995582, 0.36943182)]
+            double radius = 0.008093110879176019
+            double3 xformOp:translate = (0.6188573098101122, -0.39090455831258736, 0.004855866527505612)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def Sphere "stone_0260" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+        )
+        {
+            rel material:binding:physics = </GravelWorld/PhysicsMaterials/gravel> (
+                bindMaterialAs = "weakerThanDescendants"
+            )
+            color3f[] primvars:displayColor = [(0.49524918, 0.47048673, 0.44572428)]
+            double radius = 0.014642334740403943
+            double3 xformOp:translate = (1.6304276329893357, 0.2947983300407948, 0.008785400844242366)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def Sphere "stone_0261" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+        )
+        {
+            rel material:binding:physics = </GravelWorld/PhysicsMaterials/gravel> (
+                bindMaterialAs = "weakerThanDescendants"
+            )
+            color3f[] primvars:displayColor = [(0.50076777, 0.47572935, 0.45069095)]
+            double radius = 0.015114221511084634
+            double3 xformOp:translate = (1.5661897880459583, -0.46913518799538534, 0.00906853290665078)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def Sphere "stone_0262" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+        )
+        {
+            rel material:binding:physics = </GravelWorld/PhysicsMaterials/gravel> (
+                bindMaterialAs = "weakerThanDescendants"
+            )
+            color3f[] primvars:displayColor = [(0.5733962, 0.5447264, 0.51605654)]
+            double radius = 0.01729040335861138
+            double3 xformOp:translate = (-0.7831748155041415, 0.3398723951764555, 0.010374242015166827)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def Sphere "stone_0263" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+        )
+        {
+            rel material:binding:physics = </GravelWorld/PhysicsMaterials/gravel> (
+                bindMaterialAs = "weakerThanDescendants"
+            )
+            color3f[] primvars:displayColor = [(0.41216508, 0.39155683, 0.37094858)]
+            double radius = 0.011778865791270092
+            double3 xformOp:translate = (1.2902126104884104, 0.5568314197464345, 0.007067319474762055)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def Sphere "stone_0264" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+        )
+        {
+            rel material:binding:physics = </GravelWorld/PhysicsMaterials/gravel> (
+                bindMaterialAs = "weakerThanDescendants"
+            )
+            color3f[] primvars:displayColor = [(0.49805376, 0.4731511, 0.4482484)]
+            double radius = 0.011226764842978722
+            double3 xformOp:translate = (1.0080862725628021, 0.2233169952746792, 0.006736058905787233)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def Sphere "stone_0265" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+        )
+        {
+            rel material:binding:physics = </GravelWorld/PhysicsMaterials/gravel> (
+                bindMaterialAs = "weakerThanDescendants"
+            )
+            color3f[] primvars:displayColor = [(0.5216595, 0.4955765, 0.46949354)]
+            double radius = 0.01682611077849798
+            double3 xformOp:translate = (-0.6325464211677475, -0.5030514271070496, 0.010095666467098788)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def Sphere "stone_0266" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+        )
+        {
+            rel material:binding:physics = </GravelWorld/PhysicsMaterials/gravel> (
+                bindMaterialAs = "weakerThanDescendants"
+            )
+            color3f[] primvars:displayColor = [(0.5096713, 0.48418772, 0.45870414)]
+            double radius = 0.005853869033161481
+            double3 xformOp:translate = (0.37507999778976586, 0.15969206916121859, 0.003512321419896888)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def Sphere "stone_0267" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+        )
+        {
+            rel material:binding:physics = </GravelWorld/PhysicsMaterials/gravel> (
+                bindMaterialAs = "weakerThanDescendants"
+            )
+            color3f[] primvars:displayColor = [(0.49074307, 0.46620592, 0.44166878)]
+            double radius = 0.009227410763142683
+            double3 xformOp:translate = (3.973138779304618, 0.036668204917589486, 0.005536446457885609)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def Sphere "stone_0268" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+        )
+        {
+            rel material:binding:physics = </GravelWorld/PhysicsMaterials/gravel> (
+                bindMaterialAs = "weakerThanDescendants"
+            )
+            color3f[] primvars:displayColor = [(0.57055855, 0.54203063, 0.5135027)]
+            double radius = 0.012870548289959066
+            double3 xformOp:translate = (-0.5041076916047901, 0.24213530225527946, 0.007722328973975439)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def Sphere "stone_0269" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+        )
+        {
+            rel material:binding:physics = </GravelWorld/PhysicsMaterials/gravel> (
+                bindMaterialAs = "weakerThanDescendants"
+            )
+            color3f[] primvars:displayColor = [(0.4430046, 0.4208544, 0.39870414)]
+            double radius = 0.013461916643456969
+            double3 xformOp:translate = (2.844813650523693, 0.265007899989119, 0.008077149986074181)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def Sphere "stone_0270" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+        )
+        {
+            rel material:binding:physics = </GravelWorld/PhysicsMaterials/gravel> (
+                bindMaterialAs = "weakerThanDescendants"
+            )
+            color3f[] primvars:displayColor = [(0.49069977, 0.4661648, 0.4416298)]
+            double radius = 0.010870213907548658
+            double3 xformOp:translate = (0.14246787182292198, -0.19328205739778975, 0.0065221283445291945)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def Sphere "stone_0271" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+        )
+        {
+            rel material:binding:physics = </GravelWorld/PhysicsMaterials/gravel> (
+                bindMaterialAs = "weakerThanDescendants"
+            )
+            color3f[] primvars:displayColor = [(0.53302157, 0.5063705, 0.47971943)]
+            double radius = 0.010407865453399438
+            double3 xformOp:translate = (-0.5245708036218457, -0.08788319248685039, 0.006244719272039663)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def Sphere "stone_0272" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+        )
+        {
+            rel material:binding:physics = </GravelWorld/PhysicsMaterials/gravel> (
+                bindMaterialAs = "weakerThanDescendants"
+            )
+            color3f[] primvars:displayColor = [(0.41342667, 0.39275533, 0.372084)]
+            double radius = 0.009865913304661978
+            double3 xformOp:translate = (-0.2368053761563812, 0.5075820428812613, 0.005919547982797187)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def Sphere "stone_0273" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+        )
+        {
+            rel material:binding:physics = </GravelWorld/PhysicsMaterials/gravel> (
+                bindMaterialAs = "weakerThanDescendants"
+            )
+            color3f[] primvars:displayColor = [(0.5477592, 0.52037126, 0.49298328)]
+            double radius = 0.015813034550173105
+            double3 xformOp:translate = (-0.533849491481613, -0.48412268092105726, 0.009487820730103862)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def Sphere "stone_0274" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+        )
+        {
+            rel material:binding:physics = </GravelWorld/PhysicsMaterials/gravel> (
+                bindMaterialAs = "weakerThanDescendants"
+            )
+            color3f[] primvars:displayColor = [(0.5123173, 0.48670143, 0.46108556)]
+            double radius = 0.015553000708606098
+            double3 xformOp:translate = (1.7818536780767507, 0.10375809928737234, 0.009331800425163659)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def Sphere "stone_0275" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+        )
+        {
+            rel material:binding:physics = </GravelWorld/PhysicsMaterials/gravel> (
+                bindMaterialAs = "weakerThanDescendants"
+            )
+            color3f[] primvars:displayColor = [(0.5330681, 0.5064147, 0.4797613)]
+            double radius = 0.009285397758410665
+            double3 xformOp:translate = (-0.38884357322720353, -0.1756823044394788, 0.005571238655046399)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def Sphere "stone_0276" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+        )
+        {
+            rel material:binding:physics = </GravelWorld/PhysicsMaterials/gravel> (
+                bindMaterialAs = "weakerThanDescendants"
+            )
+            color3f[] primvars:displayColor = [(0.5936797, 0.5639957, 0.5343118)]
+            double radius = 0.014753695253269215
+            double3 xformOp:translate = (3.340460744345325, 0.2652728144953793, 0.00885221715196153)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def Sphere "stone_0277" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+        )
+        {
+            rel material:binding:physics = </GravelWorld/PhysicsMaterials/gravel> (
+                bindMaterialAs = "weakerThanDescendants"
+            )
+            color3f[] primvars:displayColor = [(0.44254777, 0.42042038, 0.398293)]
+            double radius = 0.0128053311859208
+            double3 xformOp:translate = (0.7582309284657449, 0.09350222206782588, 0.007683198711552479)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def Sphere "stone_0278" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+        )
+        {
+            rel material:binding:physics = </GravelWorld/PhysicsMaterials/gravel> (
+                bindMaterialAs = "weakerThanDescendants"
+            )
+            color3f[] primvars:displayColor = [(0.5690747, 0.5406209, 0.5121672)]
+            double radius = 0.013537571938845975
+            double3 xformOp:translate = (0.1212243455378279, -0.47013794168728007, 0.008122543163307584)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def Sphere "stone_0279" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+        )
+        {
+            rel material:binding:physics = </GravelWorld/PhysicsMaterials/gravel> (
+                bindMaterialAs = "weakerThanDescendants"
+            )
+            color3f[] primvars:displayColor = [(0.5614443, 0.53337204, 0.50529987)]
+            double radius = 0.009778293657999551
+            double3 xformOp:translate = (2.8130281596842486, 0.08892000519775523, 0.0058669761947997305)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def Sphere "stone_0280" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+        )
+        {
+            rel material:binding:physics = </GravelWorld/PhysicsMaterials/gravel> (
+                bindMaterialAs = "weakerThanDescendants"
+            )
+            color3f[] primvars:displayColor = [(0.5227147, 0.49657893, 0.4704432)]
+            double radius = 0.015987017097268654
+            double3 xformOp:translate = (3.872733010628541, 0.3821122314488036, 0.009592210258361192)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def Sphere "stone_0281" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+        )
+        {
+            rel material:binding:physics = </GravelWorld/PhysicsMaterials/gravel> (
+                bindMaterialAs = "weakerThanDescendants"
+            )
+            color3f[] primvars:displayColor = [(0.56589216, 0.53759754, 0.5093029)]
+            double radius = 0.013355089129787806
+            double3 xformOp:translate = (-0.868730842732083, 0.5149011491939236, 0.008013053477872683)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def Sphere "stone_0282" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+        )
+        {
+            rel material:binding:physics = </GravelWorld/PhysicsMaterials/gravel> (
+                bindMaterialAs = "weakerThanDescendants"
+            )
+            color3f[] primvars:displayColor = [(0.46179694, 0.43870708, 0.41561726)]
+            double radius = 0.008476820427003437
+            double3 xformOp:translate = (-0.09791964019572796, 0.24323852743872565, 0.0050860922562020626)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def Sphere "stone_0283" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+        )
+        {
+            rel material:binding:physics = </GravelWorld/PhysicsMaterials/gravel> (
+                bindMaterialAs = "weakerThanDescendants"
+            )
+            color3f[] primvars:displayColor = [(0.51326424, 0.487601, 0.4619378)]
+            double radius = 0.009417720538104357
+            double3 xformOp:translate = (-0.9694710529817065, 0.44383524784372586, 0.005650632322862614)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def Sphere "stone_0284" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+        )
+        {
+            rel material:binding:physics = </GravelWorld/PhysicsMaterials/gravel> (
+                bindMaterialAs = "weakerThanDescendants"
+            )
+            color3f[] primvars:displayColor = [(0.40613142, 0.38582486, 0.36551827)]
+            double radius = 0.010210196471993702
+            double3 xformOp:translate = (-0.29062672924365673, 0.15980641518661653, 0.006126117883196221)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def Sphere "stone_0285" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+        )
+        {
+            rel material:binding:physics = </GravelWorld/PhysicsMaterials/gravel> (
+                bindMaterialAs = "weakerThanDescendants"
+            )
+            color3f[] primvars:displayColor = [(0.4681792, 0.44477025, 0.42136127)]
+            double radius = 0.014699452906074186
+            double3 xformOp:translate = (0.07566440016755482, -0.09620100748259619, 0.008819671743644512)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def Sphere "stone_0286" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+        )
+        {
+            rel material:binding:physics = </GravelWorld/PhysicsMaterials/gravel> (
+                bindMaterialAs = "weakerThanDescendants"
+            )
+            color3f[] primvars:displayColor = [(0.5135187, 0.48784277, 0.46216685)]
+            double radius = 0.00981069020220105
+            double3 xformOp:translate = (2.607979838713366, 0.3322027439600892, 0.005886414121320629)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def Sphere "stone_0287" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+        )
+        {
+            rel material:binding:physics = </GravelWorld/PhysicsMaterials/gravel> (
+                bindMaterialAs = "weakerThanDescendants"
+            )
+            color3f[] primvars:displayColor = [(0.5235676, 0.49738926, 0.47121087)]
+            double radius = 0.006104441519703331
+            double3 xformOp:translate = (-0.7369558678723911, -0.41110812347141623, 0.0036626649118219985)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def Sphere "stone_0288" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+        )
+        {
+            rel material:binding:physics = </GravelWorld/PhysicsMaterials/gravel> (
+                bindMaterialAs = "weakerThanDescendants"
+            )
+            color3f[] primvars:displayColor = [(0.49713233, 0.47227573, 0.4474191)]
+            double radius = 0.013761593237970469
+            double3 xformOp:translate = (0.3605142177310947, 0.19432643136991345, 0.008256955942782281)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def Sphere "stone_0289" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+        )
+        {
+            rel material:binding:physics = </GravelWorld/PhysicsMaterials/gravel> (
+                bindMaterialAs = "weakerThanDescendants"
+            )
+            color3f[] primvars:displayColor = [(0.4227635, 0.40162534, 0.38048714)]
+            double radius = 0.010746574427071127
+            double3 xformOp:translate = (0.3658342218238473, 0.30593177240204483, 0.006447944656242676)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def Sphere "stone_0290" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+        )
+        {
+            rel material:binding:physics = </GravelWorld/PhysicsMaterials/gravel> (
+                bindMaterialAs = "weakerThanDescendants"
+            )
+            color3f[] primvars:displayColor = [(0.49732655, 0.4724602, 0.4475939)]
+            double radius = 0.010588877234172574
+            double3 xformOp:translate = (0.4162323504022467, 0.2141835057121596, 0.006353326340503544)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def Sphere "stone_0291" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+        )
+        {
+            rel material:binding:physics = </GravelWorld/PhysicsMaterials/gravel> (
+                bindMaterialAs = "weakerThanDescendants"
+            )
+            color3f[] primvars:displayColor = [(0.519865, 0.49387175, 0.4678785)]
+            double radius = 0.013672723263572543
+            double3 xformOp:translate = (-0.7729131869778624, -0.12568392469484524, 0.008203633958143526)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def Sphere "stone_0292" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+        )
+        {
+            rel material:binding:physics = </GravelWorld/PhysicsMaterials/gravel> (
+                bindMaterialAs = "weakerThanDescendants"
+            )
+            color3f[] primvars:displayColor = [(0.42744696, 0.4060746, 0.38470227)]
+            double radius = 0.005099932116698477
+            double3 xformOp:translate = (0.5070968100921838, -0.34651922493562526, 0.003059959270019086)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def Sphere "stone_0293" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+        )
+        {
+            rel material:binding:physics = </GravelWorld/PhysicsMaterials/gravel> (
+                bindMaterialAs = "weakerThanDescendants"
+            )
+            color3f[] primvars:displayColor = [(0.54940283, 0.52193266, 0.49446255)]
+            double radius = 0.00832175355227897
+            double3 xformOp:translate = (0.6406117796892055, -0.5907241121168256, 0.004993052131367382)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def Sphere "stone_0294" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+        )
+        {
+            rel material:binding:physics = </GravelWorld/PhysicsMaterials/gravel> (
+                bindMaterialAs = "weakerThanDescendants"
+            )
+            color3f[] primvars:displayColor = [(0.50005245, 0.47504985, 0.45004722)]
+            double radius = 0.007284032424385949
+            double3 xformOp:translate = (0.9010372285761812, 0.24440551605919636, 0.00437041945463157)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def Sphere "stone_0295" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+        )
+        {
+            rel material:binding:physics = </GravelWorld/PhysicsMaterials/gravel> (
+                bindMaterialAs = "weakerThanDescendants"
+            )
+            color3f[] primvars:displayColor = [(0.5723529, 0.5437352, 0.5151176)]
+            double radius = 0.015833604631458414
+            double3 xformOp:translate = (3.0310009328338197, -0.5135094040894106, 0.009500162778875049)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def Sphere "stone_0296" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+        )
+        {
+            rel material:binding:physics = </GravelWorld/PhysicsMaterials/gravel> (
+                bindMaterialAs = "weakerThanDescendants"
+            )
+            color3f[] primvars:displayColor = [(0.572422, 0.5438009, 0.5151798)]
+            double radius = 0.005549929400316288
+            double3 xformOp:translate = (-0.9062923170717715, 0.5053949214028949, 0.003329957640189773)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def Sphere "stone_0297" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+        )
+        {
+            rel material:binding:physics = </GravelWorld/PhysicsMaterials/gravel> (
+                bindMaterialAs = "weakerThanDescendants"
+            )
+            color3f[] primvars:displayColor = [(0.4835388, 0.45936185, 0.43518493)]
+            double radius = 0.012484869089578802
+            double3 xformOp:translate = (1.8669984044292152, 0.25139875388272104, 0.00749092145374728)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def Sphere "stone_0298" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+        )
+        {
+            rel material:binding:physics = </GravelWorld/PhysicsMaterials/gravel> (
+                bindMaterialAs = "weakerThanDescendants"
+            )
+            color3f[] primvars:displayColor = [(0.5602644, 0.53225124, 0.504238)]
+            double radius = 0.0064972538446293766
+            double3 xformOp:translate = (-0.895717204876256, -0.2102781846653834, 0.0038983523067776258)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def Sphere "stone_0299" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+        )
+        {
+            rel material:binding:physics = </GravelWorld/PhysicsMaterials/gravel> (
+                bindMaterialAs = "weakerThanDescendants"
+            )
+            color3f[] primvars:displayColor = [(0.41762596, 0.39674467, 0.37586337)]
+            double radius = 0.013035628422955123
+            double3 xformOp:translate = (3.1601295653585355, 0.5037237020896616, 0.007821377053773074)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+    }
+}
+

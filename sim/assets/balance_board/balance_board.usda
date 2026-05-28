@@ -1,0 +1,131 @@
+#usda 1.0
+(
+    defaultPrim = "BalanceBoard"
+    metersPerUnit = 1
+    upAxis = "Z"
+)
+
+def Xform "BalanceBoard"
+{
+    def PhysicsScene "physicsScene"
+    {
+        vector3f physics:gravityDirection = (0, 0, -1)
+        float physics:gravityMagnitude = 9.81
+    }
+
+    def Material "physicsMaterial" (
+        prepend apiSchemas = ["PhysicsMaterialAPI"]
+    )
+    {
+        float physics:dynamicFriction = 0.8
+        float physics:restitution = 0
+        float physics:staticFriction = 1
+    }
+
+    def Cube "ground" (
+        prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+    )
+    {
+        rel material:binding:physics = </BalanceBoard/physicsMaterial> (
+            bindMaterialAs = "weakerThanDescendants"
+        )
+        color3f[] primvars:displayColor = [(0.55, 0.55, 0.55)]
+        double size = 1
+        float3 xformOp:scale = (5, 5, 0.02)
+        double3 xformOp:translate = (0, 0, -0.01)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:scale"]
+    }
+
+    def Xform "pivot_anchor" (
+        prepend apiSchemas = ["PhysicsRigidBodyAPI"]
+    )
+    {
+        bool physics:kinematicEnabled = 1
+        bool physics:rigidBodyEnabled = 1
+        double3 xformOp:translate = (0, 0, 0.2)
+        uniform token[] xformOpOrder = ["xformOp:translate"]
+    }
+
+    def Xform "plank" (
+        prepend apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI", "PhysxRigidBodyAPI"]
+    )
+    {
+        float physics:mass = 2
+        bool physics:rigidBodyEnabled = 1
+        float physxRigidBody:angularDamping = 0
+        bool physxRigidBody:enableGyroscopicForces = 0
+        float physxRigidBody:linearDamping = 0
+        float physxRigidBody:maxDepenetrationVelocity = 1
+        float3 xformOp:rotateXYZ = (0, 0, 0)
+        double3 xformOp:translate = (-0.1, 0, 0.22)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateXYZ"]
+
+        def Cube "visual" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+        )
+        {
+            rel material:binding:physics = </BalanceBoard/physicsMaterial> (
+                bindMaterialAs = "weakerThanDescendants"
+            )
+            color3f[] primvars:displayColor = [(1, 0.85, 0.2)]
+            double size = 1
+            float3 xformOp:scale = (2, 1, 0.04)
+            uniform token[] xformOpOrder = ["xformOp:scale"]
+        }
+    }
+
+    def PhysicsRevoluteJoint "pivot_joint" (
+        prepend apiSchemas = ["PhysxJointAPI"]
+    )
+    {
+        uniform token physics:axis = "Y"
+        rel physics:body0 = </BalanceBoard/pivot_anchor>
+        rel physics:body1 = </BalanceBoard/plank>
+        point3f physics:localPos0 = (0, 0, 0)
+        point3f physics:localPos1 = (0.1, 0, -0.02)
+        quatf physics:localRot0 = (1, 0, 0, 0)
+        quatf physics:localRot1 = (1, 0, 0, 0)
+        float physics:lowerLimit = -25
+        float physics:upperLimit = 25
+        float physxJoint:armature = 0
+        float physxJoint:jointFriction = 0
+        float physxJoint:maxJointVelocity = 1000
+    }
+
+    def Xform "load" (
+        prepend apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI"]
+    )
+    {
+        float physics:mass = 5
+        bool physics:rigidBodyEnabled = 1
+        double3 xformOp:translate = (0.5, 0, 0.38999999999999996)
+        uniform token[] xformOpOrder = ["xformOp:translate"]
+
+        def Cube "visual" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+        )
+        {
+            rel material:binding:physics = </BalanceBoard/physicsMaterial> (
+                bindMaterialAs = "weakerThanDescendants"
+            )
+            color3f[] primvars:displayColor = [(0.2, 0.5, 0.95)]
+            double size = 1
+            float3 xformOp:scale = (0.2, 0.2, 0.2)
+            uniform token[] xformOpOrder = ["xformOp:scale"]
+        }
+    }
+
+    def DistantLight "sunLight"
+    {
+        float inputs:angle = 2
+        float inputs:intensity = 3000
+        float3 xformOp:rotateXYZ = (-45, 0, 30)
+        uniform token[] xformOpOrder = ["xformOp:rotateXYZ"]
+    }
+
+    def DomeLight "domeLight"
+    {
+        float inputs:intensity = 500
+    }
+}
+

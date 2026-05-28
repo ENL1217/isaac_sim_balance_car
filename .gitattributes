@@ -1,0 +1,16 @@
+# Force Windows-style CRLF line endings on .bat files.
+# Without this, the Write tool / git auto-conversion can produce LF-only
+# bat files, which cause cmd.exe to mis-parse line continuations (^) and
+# fail with "'M' is not recognized..." errors.
+*.bat text eol=crlf
+*.cmd text eol=crlf
+
+# Python / Markdown / USD / etc. use LF (cross-platform standard).
+*.py text eol=lf
+*.md text eol=lf
+*.usda text eol=lf
+*.json text eol=lf
+*.yaml text eol=lf
+*.yml text eol=lf
+*.txt text eol=lf
+*.gitignore text eol=lf

@@ -1,0 +1,45 @@
+#usda 1.0
+(
+    defaultPrim = "LineWorld"
+    metersPerUnit = 1
+    upAxis = "Z"
+)
+
+def Xform "LineWorld"
+{
+    def Scope "PhysicsMaterials"
+    {
+        def Material "track" (
+            prepend apiSchemas = ["PhysicsMaterialAPI"]
+        )
+        {
+            float physics:dynamicFriction = 0.8
+            float physics:restitution = 0
+            float physics:staticFriction = 1
+        }
+    }
+
+    def Cube "ground" (
+        prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+    )
+    {
+        rel material:binding:physics = </LineWorld/PhysicsMaterials/track> (
+            bindMaterialAs = "weakerThanDescendants"
+        )
+        color3f[] primvars:displayColor = [(0.92, 0.92, 0.9)]
+        double size = 1
+        float3 xformOp:scale = (10, 3, 0.02)
+        double3 xformOp:translate = (3, 0, -0.01)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:scale"]
+    }
+
+    def Cube "line"
+    {
+        color3f[] primvars:displayColor = [(0.05, 0.05, 0.05)]
+        double size = 1
+        float3 xformOp:scale = (8, 0.04, 0.001)
+        double3 xformOp:translate = (3, 0, 0.0005)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:scale"]
+    }
+}
+
